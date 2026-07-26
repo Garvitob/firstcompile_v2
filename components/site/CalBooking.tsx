@@ -19,29 +19,36 @@ function LiveCal() {
   const ns = dur === 30 ? "intro30" : "intro15";
   const link = (dur === 30 ? LINK_30 : LINK_15 || LINK_30) as string;
 
-  // Cal's `ui` API must be called once per namespace: calling it again warns
-  // "Existing embed CSS Vars are being reset". Both themes' brand colours are
-  // registered up front, and the live theme is driven by the config prop below.
-  const configured = useRef<Set<string>>(new Set());
+  // The theme must be sent on every call: relying on the <Cal> config prop
+  // alone left whichever namespace mounted first rendering light. Only
+  // `cssVarsPerTheme` may be sent once per namespace, since repeating it is
+  // what warns "Existing embed CSS Vars are being reset".
+  const brandedNamespaces = useRef<Set<string>>(new Set());
   useEffect(() => {
-    if (!mounted || configured.current.has(ns)) return;
-    configured.current.add(ns);
+    if (!mounted) return;
+    const needsBrand = !brandedNamespaces.current.has(ns);
+    if (needsBrand) brandedNamespaces.current.add(ns);
     (async () => {
       const api = await getCalApi({ namespace: ns });
       api("ui", {
+        theme,
         layout: "month_view",
         // The panel header and the meta list beside it already state the
         // format, length, and that it is with an engineer. Cal's own detail
         // block duplicates all of that and carries a profile photo, which the
         // design contract rules out of the booking panel.
         hideEventTypeDetails: true,
-        cssVarsPerTheme: {
-          light: { "cal-brand": "#2c5fe6" },
-          dark: { "cal-brand": "#6a95ff" },
-        },
+        ...(needsBrand
+          ? {
+              cssVarsPerTheme: {
+                light: { "cal-brand": "#2c5fe6" },
+                dark: { "cal-brand": "#6a95ff" },
+              },
+            }
+          : {}),
       });
     })();
-  }, [mounted, ns]);
+  }, [mounted, ns, theme]);
 
   return (
     <div className="cal cal-live rv d1">
