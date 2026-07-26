@@ -24,6 +24,8 @@ export default defineConfig({
       timeout: 60_000,
       env: {
         TEST_STORE: "memory",
+        TEST_EMAIL: "fail", // every send is a simulated failure — leads must survive
+        SEND_ACK: "true",
         ADMIN_USER: "admin",
         ADMIN_PASSWORD: "parity-test-password",
         NEXT_PUBLIC_SITE_URL: "https://firstcompile.com",

@@ -47,13 +47,51 @@ See [`.env.example`](.env.example). Summary:
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin (metadata, sitemap, JSON-LD) |
 | `DATABASE_URL` | Neon Postgres — stores enquiries |
-| `RESEND_API_KEY`, `ENQUIRY_TO`, `ENQUIRY_FROM` | Enquiry notification email |
+| `RESEND_API_KEY` | Resend key scoped to sending on `notify.firstcompile.com` |
+| `ENQUIRY_FROM` | Always a `notify.firstcompile.com` address — the app refuses a root-domain From |
+| `ENQUIRY_TO` | Founders' real Workspace inbox (`hello@firstcompile.com`) |
+| `SEND_ACK` | `true` → plain-text acknowledgement to the enquirer (≤70 words, one link) |
 | `ADMIN_USER`, `ADMIN_PASSWORD` | HTTP Basic Auth for `/admin/enquiries` |
 | `NEXT_PUBLIC_CAL_LINK_30`, `NEXT_PUBLIC_CAL_LINK_15` | Cal.com event links (e.g. `firstcompile/intro-30`) |
 
 Degradation is graceful: no `DATABASE_URL` → email only; no `RESEND_API_KEY`
-→ store only; neither → 501 with a clear message. `NEXT_PUBLIC_*` values are
-inlined at build time — changing them on Vercel requires a redeploy.
+→ store only; neither → 501 with a clear message. The enquiry is stored
+**before** any email is attempted, so a mail failure can never lose a lead.
+`NEXT_PUBLIC_*` values are inlined at build time — changing them on Vercel
+requires a redeploy.
+
+## Deliverability
+
+The email architecture is deliberate — do not change it:
+
+- **Two domains, strictly separated.** The root `firstcompile.com` is for
+  human mail only (Google Workspace: client replies, founder outreach). All
+  programmatic mail signs as **`notify.firstcompile.com`** (Resend,
+  us-east-1, return-path `send`, open/click tracking OFF). Email reputation
+  is ledgered per sending domain, so nothing this app does can ever touch the
+  root domain's reputation. The code enforces this: a root-domain
+  `ENQUIRY_FROM` is refused at runtime, and the test suite grep-guards the
+  codebase for it.
+- **DNS**: Resend's three records live under `notify.` (`send.notify`,
+  `resend._domainkey.notify`); Google Workspace records live on the root;
+  they never conflict. Add one DMARC record on the root —
+  `_dmarc` → `v=DMARC1; p=none; rua=mailto:hello@firstcompile.com; fo=1` —
+  which covers both. Tighten to `p=quarantine` after ~4 clean weeks.
+- **What the app sends**: (1) an internal notification to `ENQUIRY_TO` with
+  Reply-To set to the enquirer, zero links; (2) if `SEND_ACK=true`, a
+  plain-text acknowledgement to the enquirer, under 70 words, exactly one
+  link, Reply-To `hello@firstcompile.com`. Both are plain text — no HTML, no
+  images, no tracking pixels, no shorteners. One send attempt plus one retry
+  on 5xx; Resend message IDs are logged next to the DB row id.
+- **First-run checks**: because notifications go *to* your own Workspace
+  inbox *from* your own subdomain, Google may quarantine the first few —
+  check Admin console → Spam quarantine after your first test and allowlist
+  if needed. Before launch, submit a real enquiry with the form using a
+  mail-tester.com address to score the ack path — require **9/10 or better**
+  and fix its findings first.
+- **Never**: Resend Broadcasts/Audiences, newsletters, drip sequences, bulk
+  sends, tracking of any kind. This codebase has no such capability on
+  purpose. Programmatic = notify. Root = human. Forever.
 
 ## Database
 
@@ -110,8 +148,12 @@ node scripts/check-copy.mjs   # voice/structure gate over generated copy
 - [ ] **Cal.com**: create the account → connect Google Calendar (this is what
       makes Meet links appear on invites automatically) → create two event
       types (30 min, 15 min) → put their links in `NEXT_PUBLIC_CAL_LINK_30/15`.
-- [ ] **Resend**: add the domain, create the 3 DNS records it shows, verify,
-      create an API key. Set `ENQUIRY_FROM` to a verified address.
+- [ ] **Resend**: the domain is `notify.firstcompile.com` (already decided —
+      subdomain, us-east-1, tracking off). Create its 3 DNS records under
+      `notify.`, verify, create a sending-scope API key. `ENQUIRY_FROM` stays
+      `FirstCompile <hello@notify.firstcompile.com>`. Add the root DMARC
+      record (see Deliverability). Then run one live enquiry to a
+      mail-tester.com address and require 9/10+.
 - [ ] **Neon**: create a project, copy the pooled connection string into
       `DATABASE_URL`, run `npx prisma db push` once.
 - [ ] **Mailboxes**: `hello@firstcompile.com` live; `careers@` optional.

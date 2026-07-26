@@ -379,12 +379,31 @@ test.describe.serial("enquiry pipeline", () => {
     );
   });
 
+  test("email failure never loses the lead (A4-14)", async ({ request }) => {
+    // The server runs with TEST_EMAIL=fail: every send attempt fails. The
+    // enquiry must still be stored and the caller must still see success.
+    const res = await request.post(SITE + "/api/enquiry", {
+      data: {
+        name: "Email Failure Case",
+        email: "emailfail@example.com",
+        service: "MVP development",
+        budget: "1-5",
+        message: "Store must happen before the email attempt.",
+      },
+    });
+    expect(res.status()).toBe(200);
+    expect((await res.json()).ok).toBe(true);
+    const rows = await (await request.get(SITE + "/api/test-enquiries")).json();
+    expect(rows.rows.length).toBe(2);
+    expect(rows.rows[0].name).toBe("Email Failure Case");
+  });
+
   test("6th rapid submit is rate limited and surfaced inline", async ({
     page,
     request,
   }) => {
     // bring the store to 5 recent rows for this IP bucket
-    for (let i = 2; i <= 5; i++) {
+    for (let i = 3; i <= 5; i++) {
       const res = await request.post(SITE + "/api/enquiry", {
         data: {
           name: `Parity Tester ${i}`,
@@ -419,6 +438,73 @@ test.describe.serial("enquiry pipeline", () => {
     const rows = await (await request.get(SITE + "/api/test-enquiries")).json();
     expect(rows.rows.length).toBe(5);
   });
+});
+
+/* ================================================================
+   13–15 · Addendum A: email builder, root-domain grep guard
+   ================================================================ */
+test("email builder: notify From, link counts, header-injection safety (A4-13)", async () => {
+  const { buildInternalEmail, buildAckEmail, resolveFrom } = await import(
+    "../lib/email"
+  );
+  const crafted = {
+    name: "X\r\nBcc: victim@example.com",
+    email: "attacker@example.com\r\nCc: victim@example.com",
+    company: null,
+    service: "MVP development\nX-Injected: 1",
+    budgetLabel: "$1k – $5k",
+    message: "A normal project description with no links in it.",
+    ip: "203.0.113.7",
+  };
+
+  // From domain is always the notify subdomain (env unset here → default)
+  expect(resolveFrom()).toContain("@notify.firstcompile.com");
+
+  const internal = buildInternalEmail(crafted);
+  expect(internal.from).toContain("@notify.firstcompile.com");
+  expect(internal.subject).not.toMatch(/[\r\n]/);
+  expect(internal.replyTo).not.toMatch(/[\r\n]/);
+  expect(internal.text.match(/https?:\/\//g) || []).toHaveLength(0);
+
+  const ack = buildAckEmail(crafted);
+  expect(ack.from).toContain("@notify.firstcompile.com");
+  expect(ack.subject).toBe("We received your enquiry — FirstCompile");
+  expect(ack.subject).not.toMatch(/[\r\n]/);
+  expect(ack.to).not.toMatch(/[\r\n]/);
+  expect(ack.replyTo).toBe("hello@firstcompile.com");
+  expect(ack.text.match(/https?:\/\//g) || []).toHaveLength(1);
+  expect(ack.text).toContain("https://firstcompile.com");
+  // body ≤ 70 words
+  expect(ack.text.split(/\s+/).filter(Boolean).length).toBeLessThanOrEqual(70);
+});
+
+test("grep guard: no root-domain From anywhere in the codebase (A4-15)", () => {
+  const banned = "@firstcompile" + ".com>"; // split so this file never matches itself
+  const rootDir = path.join(__dirname, "..");
+  const scanDirs = ["app", "components", "lib", "data", "styles", "scripts"];
+  const scanFiles = [".env.example", "README.md", "playwright.config.ts", "middleware.ts"];
+  const offenders: string[] = [];
+
+  const scan = (file: string) => {
+    if (path.resolve(file) === path.resolve(__filename)) return;
+    const text = fs.readFileSync(file, "utf8");
+    if (text.includes(banned)) offenders.push(path.relative(rootDir, file));
+  };
+  const walk = (dir: string) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (/\.(ts|tsx|js|mjs|json|css|md|mdx|example)$/.test(entry.name))
+        scan(full);
+    }
+  };
+  for (const dir of scanDirs) walk(path.join(rootDir, dir));
+  for (const file of scanFiles) scan(path.join(rootDir, file));
+
+  expect(offenders, `root-domain From found in: ${offenders.join(", ")}`).toEqual([]);
+  expect(
+    fs.readFileSync(path.join(rootDir, "lib", "email.ts"), "utf8")
+  ).toContain("notify.firstcompile.com");
 });
 
 /* ================================================================
