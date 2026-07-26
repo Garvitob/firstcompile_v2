@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
@@ -30,7 +30,11 @@ function LiveCal() {
       const api = await getCalApi({ namespace: ns });
       api("ui", {
         layout: "month_view",
-        hideEventTypeDetails: false,
+        // The panel header and the meta list beside it already state the
+        // format, length, and that it is with an engineer. Cal's own detail
+        // block duplicates all of that and carries a profile photo, which the
+        // design contract rules out of the booking panel.
+        hideEventTypeDetails: true,
         cssVarsPerTheme: {
           light: { "cal-brand": "#2c5fe6" },
           dark: { "cal-brand": "#6a95ff" },
@@ -40,7 +44,7 @@ function LiveCal() {
   }, [mounted, ns]);
 
   return (
-    <div className="cal rv d1">
+    <div className="cal cal-live rv d1">
       <div className="cal-h">
         <div>
           <div className="cal-t">Intro call · FirstCompile</div>
@@ -65,13 +69,13 @@ function LiveCal() {
           </button>
         </div>
       </div>
-      <div style={{ minHeight: 540 }}>
+      <div className="cal-embed">
         {mounted && (
           <Cal
             key={`${ns}-${theme}`}
             namespace={ns}
             calLink={link}
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", height: "100%", overflow: "scroll" }}
             config={{ layout: "month_view", theme }}
           />
         )}
@@ -90,3 +94,4 @@ export default function CalBooking() {
   if (!LINK_30) return <DemoCalendar />;
   return <LiveCal />;
 }
+

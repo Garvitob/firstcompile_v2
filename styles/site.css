@@ -60,6 +60,29 @@
 .empty p{color:var(--tx2);font-size:15.5px;line-height:1.66}
 .empty p+p{margin-top:12px}
 
+/* ---------- Cal.com embed box ----------
+   The embed auto-resizes its iframe to fit content, which at this column
+   width means a stacked layout and one row per slot: thousands of pixels.
+   The contract allocates 468px to the whole booking panel (75 header +
+   331 body + 61 footer), so the embed body is pinned and Cal scrolls
+   inside its own iframe, exactly as the contract's slot list did. */
+.cal-embed{height:496px;overflow:hidden;position:relative}
+.cal-embed>*{height:100%!important}
+.cal-embed iframe{height:100%!important;width:100%!important;border:0}
+@media (max-width:760px){.cal-embed{height:560px}}
+
+/* Cal's booker only lays the month grid and the slot list side by side once
+   its own viewport clears 768px. The contract's .92/1.08 split leaves the
+   panel at 699px, just under that line, so Cal stacks and the slots fall
+   outside the panel entirely. Widening this one column past the threshold
+   restores the compact calendar-plus-slots view. Scoped with :has() so the
+   design-preview calendar, which was drawn for 699px, keeps its own width. */
+@media (min-width:1041px){
+  .book-grid:has(.cal-live){
+    grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr);
+  }
+}
+
 /* ---------- admin ---------- */
 .adm-wrap{padding:clamp(36px,4.6vw,60px) 0}
 .adm-count{font-size:12.5px;color:var(--tx3)}
