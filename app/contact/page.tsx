@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Booking from "@/components/site/Booking";
+import JsonLd from "@/components/site/JsonLd";
+import { contactSchema, breadcrumb } from "@/data/schema";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={contactSchema()} />
+      <JsonLd data={breadcrumb([{ name: "Contact", path: "/contact" }])} />
       <section className="page-hero">
         <div className="wrap">
           <span className="kick rv">Contact</span>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Shot from "@/components/site/Shot";
+import JsonLd from "@/components/site/JsonLd";
+import { workSchema, breadcrumb } from "@/data/schema";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
+      <JsonLd data={workSchema()} />
+      <JsonLd data={breadcrumb([{ name: "Work", path: "/work" }])} />
       <section className="page-hero">
         <div className="wrap">
           <span className="kick rv">Work</span>

@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/site/JsonLd";
+import { aboutSchema, breadcrumb } from "@/data/schema";
+
+const ABOUT_DESCRIPTION =
+  "FirstCompile is an AI-native software company with offices in Noida, India and the San Francisco Bay Area. AI handles volume; engineers make every decision that matters.";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "FirstCompile is an AI-native software company with offices in Noida, India and the San Francisco Bay Area. AI handles volume; engineers make every decision that matters.",
+  description: ABOUT_DESCRIPTION,
   alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={aboutSchema(ABOUT_DESCRIPTION)} />
+      <JsonLd data={breadcrumb([{ name: "About", path: "/about" }])} />
       <section className="page-hero">
         <div className="wrap">
           <span className="kick rv">About</span>

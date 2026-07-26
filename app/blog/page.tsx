@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts, formatPostDate } from "@/lib/posts";
+import JsonLd from "@/components/site/JsonLd";
+import { blogSchema, breadcrumb } from "@/data/schema";
 
 export const metadata: Metadata = {
   title: "Writing",
@@ -14,6 +16,8 @@ export default function BlogIndexPage() {
 
   return (
     <>
+      <JsonLd data={blogSchema(posts)} />
+      <JsonLd data={breadcrumb([{ name: "Writing", path: "/blog" }])} />
       <section className="page-hero">
         <div className="wrap">
           <span className="kick rv">Writing · weekly</span>

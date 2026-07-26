@@ -13,12 +13,14 @@ import Faq from "@/components/site/Faq";
 import Booking from "@/components/site/Booking";
 import JsonLd from "@/components/site/JsonLd";
 import { homeSchemas } from "@/data/schema";
-import { HOME_TITLE, HOME_DESCRIPTION } from "@/data/site";
+import { HOME_TITLE, HOME_DESCRIPTION, SITE_URL } from "@/data/site";
 
 export const metadata: Metadata = {
   title: { absolute: HOME_TITLE },
   description: HOME_DESCRIPTION,
-  alternates: { canonical: "/" },
+  // No `alternates` here: Next strips the root trailing slash, and the
+  // contract pins the canonical as "https://firstcompile.com/". The tag is
+  // rendered explicitly in the page instead — see the <link> below.
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
@@ -37,6 +39,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      {/* Hoisted into <head> by React. Kept out of `metadata` so the trailing
+          slash survives, matching the contract exactly. */}
+      <link rel="canonical" href={`${SITE_URL}/`} />
       {homeSchemas.map((schema, i) => (
         <JsonLd key={i} data={schema} />
       ))}

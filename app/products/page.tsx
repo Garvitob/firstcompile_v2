@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/site/JsonLd";
+import { productsSchema, breadcrumb } from "@/data/schema";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -10,6 +12,8 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <>
+      <JsonLd data={productsSchema()} />
+      <JsonLd data={breadcrumb([{ name: "Products", path: "/products" }])} />
       <section className="page-hero">
         <div className="wrap">
           <span className="kick rv">Products</span>

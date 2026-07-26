@@ -21,9 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
+    images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/og.png"],
   },
 };
 
