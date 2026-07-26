@@ -1,0 +1,69 @@
+/* ================================================================
+   FirstCompile · additions for interior pages only.
+   The home page is styled exclusively by contract.css (generated).
+   Everything here reuses the contract's tokens — no new colors,
+   no new type ramp, hairlines only.
+   ================================================================ */
+
+/* ---------- interior page hero ---------- */
+.page-hero{padding:clamp(44px,5.4vw,76px) 0 clamp(36px,4.6vw,60px)}
+.page-hero .lede{margin-top:18px}
+.h1i{font-size:clamp(34px,4.4vw,58px);font-weight:680;letter-spacing:-.038em;line-height:1.05;max-width:22ch}
+.crumbs{display:flex;gap:8px;flex-wrap:wrap;font-size:12.5px;color:var(--tx3);margin-bottom:18px}
+.crumbs a{transition:color .15s var(--ease)}
+.crumbs a:hover{color:var(--tx)}
+.crumbs span[aria-hidden]{color:var(--tx3)}
+
+/* first section on interior pages sits under the page hero without
+   doubling the hairline */
+.sec-flush{border-top:1px solid var(--line)}
+
+/* ---------- long-form prose (blog posts, about) ---------- */
+.art{max-width:72ch}
+.art>*:first-child{margin-top:0}
+.art p{margin:18px 0;font-size:16.5px;line-height:1.7;color:var(--tx2)}
+.art h2{font-size:clamp(22px,2.6vw,30px);font-weight:660;letter-spacing:-.026em;line-height:1.15;margin:46px 0 4px;color:var(--tx)}
+.art h3{font-size:clamp(17.5px,2vw,21px);font-weight:645;letter-spacing:-.02em;margin:34px 0 2px;color:var(--tx)}
+.art ul,.art ol{margin:18px 0;padding-left:24px;color:var(--tx2)}
+.art li{margin:8px 0;font-size:15.5px;line-height:1.62}
+.art strong{color:var(--tx);font-weight:625}
+.art a{border-bottom:1px solid var(--line2);transition:border-color .15s var(--ease)}
+.art a:hover{border-color:var(--tx2)}
+.art code{font-family:var(--mono);font-size:.86em;background:var(--srf2);border:1px solid var(--line);border-radius:6px;padding:1.5px 6px}
+.art pre{background:var(--srf);border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow-x:auto;margin:22px 0;box-shadow:var(--lift)}
+.art pre code{background:none;border:0;padding:0;font-size:13px;line-height:1.65;color:var(--tx)}
+.art blockquote{border-left:2px solid var(--line2);margin:22px 0;padding:2px 0 2px 18px;color:var(--tx3)}
+.art blockquote p{color:var(--tx3)}
+.art hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+.art table{width:100%;border-collapse:collapse;font-size:14px;margin:22px 0}
+.art th,.art td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);color:var(--tx2)}
+.art th{font-size:11px;font-weight:650;letter-spacing:.07em;text-transform:uppercase;color:var(--tx3)}
+.art-meta{display:flex;gap:14px;align-items:baseline;font-size:13px;color:var(--tx3);margin-top:16px}
+
+/* ---------- service page ---------- */
+.svc-hero-line{margin-top:14px;font-size:15px;color:var(--tx3)}
+.inc-row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(16px,2.6vw,40px);padding:19px 0;border-top:1px solid var(--line)}
+.inc-row h3{font-size:14.5px;font-weight:640;letter-spacing:-.014em}
+.inc-row p{font-size:14.5px;color:var(--tx2);line-height:1.6}
+@media (max-width:1040px){.inc-row{grid-template-columns:1fr;gap:6px}}
+.related-note{margin-top:26px;font-size:14.5px;color:var(--tx2);line-height:1.66;max-width:66ch}
+.related-note a{border-bottom:1px solid var(--line2)}
+.related-note a:hover{border-color:var(--tx2)}
+
+/* ---------- CTA band (service pages, interior pages) ---------- */
+.cta-band{border:1px solid var(--line);border-radius:18px;background:var(--srf);box-shadow:var(--lift);padding:clamp(24px,3.2vw,38px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,3vw,40px);align-items:center}
+.cta-band .meta{margin-top:14px}
+@media (max-width:760px){.cta-band{grid-template-columns:1fr}}
+
+/* ---------- careers / empty states ---------- */
+.empty{border:1px solid var(--line);border-radius:18px;background:var(--srf);box-shadow:var(--lift);padding:clamp(28px,4vw,46px);max-width:640px}
+.empty p{color:var(--tx2);font-size:15.5px;line-height:1.66}
+.empty p+p{margin-top:12px}
+
+/* ---------- admin ---------- */
+.adm-wrap{padding:clamp(36px,4.6vw,60px) 0}
+.adm-count{font-size:12.5px;color:var(--tx3)}
+.adm-msg{white-space:pre-wrap;max-width:46ch;overflow-wrap:anywhere}
+.adm-date{font-family:var(--mono);font-size:11.5px;color:var(--tx3);white-space:nowrap}
+.adm-mail{color:var(--tx2);border-bottom:1px solid var(--line2)}
+.adm-empty{padding:40px 0;color:var(--tx3);font-size:14.5px}
