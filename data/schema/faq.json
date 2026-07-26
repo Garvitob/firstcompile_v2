@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is pricing decided?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every project gets one fixed price, written down after a short scoping call and agreed before any work starts. The number depends on scope, integrations, and compliance, never on hours, and it does not change after kickoff. You have the written quote within 48 hours of the call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can you ship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most MVPs go live in two to four weeks. Custom business systems take three to eight. You see a working URL from the end of week one, and the delivery date is committed in your written quote, not estimated on a call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I own the code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The repository is created in your GitHub organisation on day one and every commit lands there. The contract assigns full IP to you. You are never waiting on an invoice to access your own product."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you sign an NDA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and before you share anything sensitive, not after. A mutual NDA is a standard part of how every conversation starts here. Ask on the first call or email and a signed copy comes back the same day. The idea, the code, and the numbers stay yours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does \"vibe-code to production\" involve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You built something fast with tools like Cursor, Lovable, Bolt, or v0, and it works on your machine but nobody can tell you if it is safe to launch. We audit the codebase, fix the dangerous parts first, restructure what needs it, and get it deployed properly. If a rebuild would be cheaper than a repair, the audit says so plainly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the AI app security audit check?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Authorisation on every endpoint, data exposed by changing IDs, secrets shipped to the browser, unvalidated uploads, injection paths, and how payments and personal data are handled. You get a written report in five working days with every finding rated, explained in plain language, and paired with its fix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you work with clients in the US and in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and we invoice correctly for both. US and international clients are billed in USD. Indian clients are billed in INR with GST. Working hours overlap both time zones, and daily written updates mean nothing waits for a meeting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which technologies do you build with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Next.js and TypeScript for web, React Native for mobile, PostgreSQL for data, and Node with Inngest for background work. AI features run on OpenAI or Anthropic models with hard cost ceilings. The stack is deliberately common so any engineer you hire later can maintain it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every project includes a 30-day window where anything we built that breaks is fixed at no cost. You also get documentation and a recorded walkthrough. After that, ongoing work is a simple monthly arrangement you can stop any time. It is optional, never a condition."
+      }
+    }
+  ]
+}

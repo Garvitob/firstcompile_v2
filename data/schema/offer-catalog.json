@@ -1,0 +1,111 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Custom software development",
+  "provider": {
+    "@type": "Organization",
+    "name": "FirstCompile",
+    "url": "https://firstcompile.com"
+  },
+  "areaServed": [
+    "India",
+    "United States",
+    "Worldwide"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "MVP development",
+        "description": "Idea to a live product users can pay for, in weeks.",
+        "url": "https://firstcompile.com/services/mvp-development"
+      },
+      {
+        "@type": "Offer",
+        "name": "Startup tech partner",
+        "description": "Product and engineering run for startups without a CTO.",
+        "url": "https://firstcompile.com/services/startup-tech-partner"
+      },
+      {
+        "@type": "Offer",
+        "name": "Vibe-code to production",
+        "description": "AI-built prototypes made secure, stable, and ready to scale.",
+        "url": "https://firstcompile.com/services/vibe-code-to-production"
+      },
+      {
+        "@type": "Offer",
+        "name": "AI app security audit",
+        "description": "A full security review of AI-generated codebases, report in 5 working days.",
+        "url": "https://firstcompile.com/services/ai-app-security-audit"
+      },
+      {
+        "@type": "Offer",
+        "name": "Custom ERP & CRM",
+        "description": "Business software shaped around how a company actually runs.",
+        "url": "https://firstcompile.com/services/custom-erp-crm"
+      },
+      {
+        "@type": "Offer",
+        "name": "Application development",
+        "description": "Web platforms, portals, and internal tools, including Shopify and WordPress.",
+        "url": "https://firstcompile.com/services/application-development"
+      },
+      {
+        "@type": "Offer",
+        "name": "AI & machine learning",
+        "description": "Practical AI in production: search, document intelligence, forecasting.",
+        "url": "https://firstcompile.com/services/ai-machine-learning"
+      },
+      {
+        "@type": "Offer",
+        "name": "Custom AI agents",
+        "description": "AI agents that take real actions in a company's tools, with approvals, limits, and audit logs.",
+        "url": "https://firstcompile.com/services/custom-ai-agents"
+      },
+      {
+        "@type": "Offer",
+        "name": "Workflow automation",
+        "description": "Integrations and background jobs with retries and monitoring, so nothing fails silently.",
+        "url": "https://firstcompile.com/services/workflow-automation"
+      },
+      {
+        "@type": "Offer",
+        "name": "Data & business intelligence",
+        "description": "One source of truth for company numbers and reporting.",
+        "url": "https://firstcompile.com/services/data-business-intelligence"
+      },
+      {
+        "@type": "Offer",
+        "name": "Industry 4.0 & industrial automation",
+        "description": "Machine monitoring, plant dashboards, and control software for factories.",
+        "url": "https://firstcompile.com/services/industry-4-0-industrial-automation"
+      },
+      {
+        "@type": "Offer",
+        "name": "Mobile apps",
+        "description": "iOS and Android apps from one codebase.",
+        "url": "https://firstcompile.com/services/mobile-apps"
+      },
+      {
+        "@type": "Offer",
+        "name": "Cloud & DevOps",
+        "description": "Deployments, environments, and monitoring done properly.",
+        "url": "https://firstcompile.com/services/cloud-devops"
+      },
+      {
+        "@type": "Offer",
+        "name": "SEO & GEO",
+        "description": "Visibility on Google and in AI answers, through technical work.",
+        "url": "https://firstcompile.com/services/seo-geo"
+      },
+      {
+        "@type": "Offer",
+        "name": "Technology consulting",
+        "description": "Architecture reviews, audits, and build-vs-buy decisions.",
+        "url": "https://firstcompile.com/services/technology-consulting"
+      }
+    ]
+  }
+}

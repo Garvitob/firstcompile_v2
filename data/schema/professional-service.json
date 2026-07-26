@@ -1,0 +1,70 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "FirstCompile",
+  "url": "https://firstcompile.com",
+  "email": "hello@firstcompile.com",
+  "description": "AI-native software company building MVPs, custom ERP and CRM, mobile apps, AI systems, automation, and dashboards for startups and businesses.",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "India"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "Worldwide"
+  ],
+  "audience": [
+    {
+      "@type": "Audience",
+      "audienceType": "Startups"
+    },
+    {
+      "@type": "Audience",
+      "audienceType": "Small and medium businesses"
+    }
+  ],
+  "knowsAbout": [
+    "MVP development",
+    "custom software development",
+    "ERP",
+    "CRM",
+    "AI application security",
+    "workflow automation",
+    "industrial automation",
+    "mobile app development",
+    "Next.js",
+    "PostgreSQL",
+    "React Native"
+  ],
+  "telephone": [
+    "+91-7017304973",
+    "+1-408-921-1258"
+  ],
+  "location": [
+    {
+      "@type": "Place",
+      "name": "FirstCompile — Noida",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Noida",
+        "addressRegion": "Uttar Pradesh",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91 70173 04973"
+    },
+    {
+      "@type": "Place",
+      "name": "FirstCompile — San Francisco Bay Area",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "telephone": "+1 (408) 921-1258"
+    }
+  ]
+}
