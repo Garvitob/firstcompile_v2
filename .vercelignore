@@ -1,0 +1,14 @@
+# Dev-time only — none of this is read by `next build`, so it never needs to
+# reach the Vercel builder. It stays in git (the parity suite and the asset
+# extractor depend on it locally); it is simply not uploaded.
+#
+# Verified: renaming contract/ away and running `next build` still generates
+# all 32 pages. Nothing here affects the deployed site.
+
+contract/
+scripts/parity.spec.ts
+scripts/serve-contract.mjs
+scripts/side-by-side.mjs
+playwright.config.ts
+test-results/
+playwright-report/
