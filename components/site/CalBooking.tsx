@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import DemoCalendar from "./DemoCalendar";
@@ -19,12 +19,16 @@ function LiveCal() {
   const ns = dur === 30 ? "intro30" : "intro15";
   const link = (dur === 30 ? LINK_30 : LINK_15 || LINK_30) as string;
 
+  // Cal's `ui` API must be called once per namespace: calling it again warns
+  // "Existing embed CSS Vars are being reset". Both themes' brand colours are
+  // registered up front, and the live theme is driven by the config prop below.
+  const configured = useRef<Set<string>>(new Set());
   useEffect(() => {
-    if (!mounted) return;
+    if (!mounted || configured.current.has(ns)) return;
+    configured.current.add(ns);
     (async () => {
       const api = await getCalApi({ namespace: ns });
       api("ui", {
-        theme,
         layout: "month_view",
         hideEventTypeDetails: false,
         cssVarsPerTheme: {
@@ -33,7 +37,7 @@ function LiveCal() {
         },
       });
     })();
-  }, [mounted, ns, theme]);
+  }, [mounted, ns]);
 
   return (
     <div className="cal rv d1">

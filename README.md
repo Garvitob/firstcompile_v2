@@ -105,7 +105,7 @@ npx prisma db push     # creates the table from prisma/schema.prisma
 
 ```bash
 npm run build          # required first — tests run the production build
-npm test               # 22 acceptance tests (parity, pipeline, SEO layer)
+npm test               # 25 acceptance tests (parity, pipeline, email, SEO layer)
 ```
 
 The suite boots the built site with an in-memory store (`TEST_STORE=memory`)
