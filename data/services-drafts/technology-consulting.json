@@ -1,0 +1,95 @@
+{
+  "slug": "technology-consulting",
+  "name": "Technology consulting",
+  "oneLiner": "A senior technical brain before you commit money. Reviews, audits, build-vs-buy calls.",
+  "metaTitle": "Technology consulting for build-vs-buy calls | FirstCompile",
+  "metaDescription": "Technology consulting from a working engineering team: code reviews, audits, and build-vs-buy decisions, scoped to a fixed price in writing within 48 hours.",
+  "kicker": "Before you build",
+  "h1": "A straight answer before the money moves.",
+  "intro": [
+    "The most expensive software mistakes happen before any code is written. A founder signs an agency contract they cannot evaluate. An operations head buys an ERP that fits someone else's business, or a team spends six months building something they could have bought. Nobody in these stories did anything stupid. They just had no engineer in the room whose only job was to protect their money.",
+    "That is the job here. We read code, audit systems, pull apart vendor proposals, and make build-vs-buy calls in writing, with the reasoning shown so you can challenge it. We build software ourselves every week, in Next.js, TypeScript, and PostgreSQL, so the advice comes from current practice rather than from a framework we read about.",
+    "The mechanics are the same as every FirstCompile engagement. A mutual NDA signed the same day, before you share anything. One fixed price in writing within 48 hours of the scoping call, never hourly. Daily written updates while we work, and a document you keep at the end, whatever you decide to do next."
+  ],
+  "whoFor": [
+    "Startups use this before committing a seed round to a build. You have an agency quote you cannot evaluate, or three quotes that do not agree, and no technical co-founder to ask. Or an AI tool wrote your prototype and you need to know whether it can carry paying users.",
+    "Established businesses use it for bigger commitments. Replacing spreadsheets with a custom system, or a custom system with packaged software. Vetting a vendor's architecture before signing a multi-year contract. Technical due diligence on a company you are about to buy.",
+    "The common thread is money about to move and no senior engineer at the table who answers only to you. That is the gap this service fills."
+  ],
+  "included": [
+    {
+      "title": "Codebase health review",
+      "line": "We read the repository and report what is sound, what is fragile, and what it will cost to change."
+    },
+    {
+      "title": "Build or buy recommendation",
+      "line": "A written call on whether to build custom or buy packaged software, with the reasoning shown so you can push back."
+    },
+    {
+      "title": "Vendor proposal review",
+      "line": "We go through an agency quote line by line and flag padding, missing scope, and vague deliverables."
+    },
+    {
+      "title": "Architecture and stack audit",
+      "line": "Data model, permissions, hosting, and background jobs checked before those decisions harden into cost."
+    },
+    {
+      "title": "AI feature feasibility check",
+      "line": "A plain answer on whether an AI feature will actually work on your data, and what it will cost to run."
+    },
+    {
+      "title": "Technical due diligence",
+      "line": "For acquisitions and investments: the state of the code, the bus factor, and what maintenance will really take."
+    },
+    {
+      "title": "A document you own",
+      "line": "Findings arrive in writing with full IP assignment, useful whether or not you ever hire us to build."
+    }
+  ],
+  "steps": [
+    {
+      "title": "NDA and scoping call",
+      "body": "We sign a mutual NDA the same day, before you share anything. Then a call where you explain the decision you are facing and we ask the awkward questions.",
+      "range": "Day 1"
+    },
+    {
+      "title": "Fixed quote in writing",
+      "body": "One price for the whole engagement, in writing, within 48 hours of the call. Never hourly, and the number does not change after kickoff.",
+      "range": "Within 48 hours"
+    },
+    {
+      "title": "The review itself",
+      "body": "We read code, test vendor claims, and talk to whoever built what already exists. You get a short written update every day, so nothing in the report lands as a surprise.",
+      "range": "Week 1 onwards"
+    },
+    {
+      "title": "Findings and a decision",
+      "body": "A written report you own, plus a call to walk through it. It ends with one recommendation you can act on, not a menu of options.",
+      "range": "End of engagement"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does technology consulting cost?",
+      "a": "We do not bill hourly. After a scoping call you get one fixed price in writing within 48 hours, and that number does not change after kickoff. You know the full cost before any work begins, and there is no meter running while we read your code."
+    },
+    {
+      "q": "Do I need an NDA before sharing my code or business plans?",
+      "a": "You should have one, and with us you will. We sign a mutual NDA before you share anything, the same day you ask, as standard practice. It covers both sides, so your code and our findings stay between us."
+    },
+    {
+      "q": "Should I build custom software or buy an off-the-shelf tool?",
+      "a": "Buy when a packaged tool covers the workflow you actually run, because someone else then pays for its maintenance. Build when your process is the advantage and forcing it into generic software would flatten it. Most businesses need less custom software than agencies suggest, which is why the recommendation should come from someone who is not paid by the hour to build."
+    },
+    {
+      "q": "Can a development company give unbiased build-vs-buy advice?",
+      "a": "There is a real tension here, and we would rather name it than pretend otherwise. Our recommendation arrives in writing with the reasoning shown, the document is yours, and it carries no obligation to hire us. When buying off the shelf is the right call, that is what the report says, because a wrong recommendation costs us more than a lost project."
+    }
+  ],
+  "related": [
+    "vibe-code-to-production",
+    "ai-app-security-audit",
+    "startup-tech-partner"
+  ],
+  "relatedProse": "If the review finds an AI-generated codebase that needs hardening, Vibe-code to production is the follow-on. Security concerns get their own AI app security audit, and founders who want this kind of judgement on tap, not just a single report, often move to Startup tech partner."
+}

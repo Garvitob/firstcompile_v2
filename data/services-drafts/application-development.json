@@ -1,0 +1,95 @@
+{
+  "slug": "application-development",
+  "name": "Application development",
+  "oneLiner": "Web platforms, portals, and internal tools. Includes Shopify and WordPress builds and migrations.",
+  "metaTitle": "Web platforms, portals, and internal tools | FirstCompile",
+  "metaDescription": "Application development for web platforms, portals, and internal tools. One fixed price in writing, a live URL from week one, and full IP assignment.",
+  "kicker": "Service",
+  "h1": "The software your business runs on, live in weeks.",
+  "intro": [
+    "Most application work starts the same way. A business has outgrown its spreadsheets, or a portal built years ago that nobody wants to touch, or a Shopify store buried under plugins. The off-the-shelf option covers most of the job. The part it misses is usually the part the business depends on.",
+    "We build web platforms, customer portals, and internal tools on Next.js, TypeScript, and PostgreSQL, and we do Shopify, WordPress, and WooCommerce builds and migrations. You get one fixed price in writing within 48 hours of a scoping call, and the number does not change after kickoff. The repository is created in your GitHub organisation on day one, and there is a live clickable URL from the end of week one.",
+    "On how it gets built: AI writes the boilerplate, the tests, the migrations. Engineers design the data model, the permissions, and anything touching money or personal data, and they read every change. Generated code is also checked by a second model against its requirement. That split is why an MVP goes live in 2–4 weeks and a custom business system in 3–8, without hourly billing."
+  ],
+  "whoFor": [
+    "A distribution business tracking orders across three spreadsheets and a shared inbox. A clinic that wants a patient portal the front desk can run without calling anyone. A Shopify store that has hit the ceiling of what themes and apps can do. These are the shapes this work usually takes.",
+    "Startups fit here too. If your product is past the prototype stage and needs a customer portal, an admin panel, or a billing flow that will survive an audit, it is the same work with a shorter timeline.",
+    "Established businesses often arrive with something already running: an old PHP portal, a WordPress site that has grown fragile, a WooCommerce install nobody dares update. We migrate as well as build from scratch, and the old system stays live until the new one has earned its place."
+  ],
+  "included": [
+    {
+      "title": "Web platforms and portals",
+      "line": "Customer-facing platforms and login portals on Next.js, TypeScript, and PostgreSQL, with row-level security where the data calls for it."
+    },
+    {
+      "title": "Internal tools and admin panels",
+      "line": "Dashboards, approval queues, and back-office screens that replace the spreadsheets your team currently fights."
+    },
+    {
+      "title": "Shopify and WordPress work",
+      "line": "New builds, custom themes and plugins, and migrations off ageing WordPress or WooCommerce installs."
+    },
+    {
+      "title": "Migrations from legacy systems",
+      "line": "Scripted, re-runnable imports out of old databases and spreadsheets, tested against a copy of your data before anything touches production."
+    },
+    {
+      "title": "Integrations and background jobs",
+      "line": "Webhooks, payment providers, and third-party APIs wired through Node and Inngest, with retries and a dead-letter queue so failures are visible instead of silent."
+    },
+    {
+      "title": "Authentication and permissions",
+      "line": "Sign-in, roles, and authorisation rules designed by an engineer, not generated, because this is where mistakes cost the most."
+    },
+    {
+      "title": "A live URL from week one",
+      "line": "A clickable staging URL from the end of week one, updated continuously, plus a daily written update so you never have to ask where things stand."
+    },
+    {
+      "title": "30-day post-launch window",
+      "line": "Anything we built that breaks in the first 30 days is fixed at no cost; after that, optional monthly care you can stop any time."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scope and fixed quote",
+      "body": "A scoping call, with a mutual NDA signed the same day before you share anything. One fixed price in writing within 48 hours. Never hourly.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "Foundations",
+      "body": "The repository is created in your GitHub organisation, the data model and permissions are designed by an engineer, and the first screens go to a live URL.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Build in the open",
+      "body": "Features ship to the live URL continuously, with daily written updates. You correct course while changes are still cheap.",
+      "range": "Week 2 onwards"
+    },
+    {
+      "title": "Launch and the 30-day window",
+      "body": "Go-live and handover, then a 30-day window where anything we built that breaks is fixed at no cost. Optional monthly care after that, which you can stop any time.",
+      "range": "Weeks 3–8"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does custom application development cost?",
+      "a": "It depends on scope, so we quote per project: one fixed price, in writing, within 48 hours of a scoping call. We never bill hourly, and the number does not change after kickoff, so scope surprises are our problem rather than yours. US and international clients are billed in USD; Indian clients in INR with GST."
+    },
+    {
+      "q": "How long does it take to build a custom web application?",
+      "a": "Typical MVPs go live in 2–4 weeks, and custom business systems take 3–8 weeks. You are not waiting in the dark either way: there is a live clickable URL from the end of week one, updated continuously, with a daily written update."
+    },
+    {
+      "q": "Who owns the code you write?",
+      "a": "You do, from day one. The repository is created in your GitHub organisation before work starts, and the contract includes full IP assignment. If we ever stop working together, everything is already in your hands."
+    },
+    {
+      "q": "Can you migrate an existing WordPress or Shopify site?",
+      "a": "Yes. We migrate sites off WordPress, WooCommerce, Shopify themes, and older in-house systems. Imports are scripted and re-runnable, tested against a copy of your data first, and the old system stays live until the new one has proven itself."
+    }
+  ],
+  "related": ["custom-erp-crm", "mobile-apps", "workflow-automation"],
+  "relatedProse": "When the system you need is closer to operations software, Custom ERP & CRM is the better starting point. Mobile apps covers the same stack on iOS and Android with React Native, and Workflow automation handles the background processes that tie a platform together."
+}

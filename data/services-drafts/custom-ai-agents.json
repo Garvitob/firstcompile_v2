@@ -1,0 +1,95 @@
+{
+  "slug": "custom-ai-agents",
+  "name": "Custom AI agents",
+  "oneLiner": "Agents that take real actions in your tools, with approvals, limits, and audit logs.",
+  "metaTitle": "AI agents with approvals and audit logs | FirstCompile",
+  "metaDescription": "We build custom AI agents that act in your tools with approvals, spend limits, and audit logs. One fixed price in writing, and a live URL from the first week.",
+  "kicker": "AI services",
+  "h1": "Agents that do the work and leave a paper trail.",
+  "intro": [
+    "Most products sold as AI agents are chat interfaces. They answer questions, then a person does the actual work. A useful agent updates the CRM record, drafts the refund, files the ticket, chases the overdue invoice. That means giving software write access to systems that matter, which is where most teams stop. They are right to be careful.",
+    "We build agents that act inside guardrails. Every action type is granted explicitly, and anything not granted is refused. Risky actions such as refunds over a threshold, emails to customers, or changes to billing sit in an approval queue until a named person clicks approve. Every step lands in an audit log you can read line by line. Model calls run on OpenAI or Anthropic with a hard cost ceiling, so a runaway loop stops itself instead of running up the bill.",
+    "Engineers design the permission model and everything touching money or personal data by hand, and read every change before it ships. A narrow single-workflow agent is usually live in 2–4 weeks; agents that act across several systems take 3–8. Either way there is a clickable URL by the end of week one and a written update every day."
+  ],
+  "whoFor": [
+    "Established businesses with a queue that never empties. Support tickets that follow the same dozen patterns. Supplier emails where three fields need copying into an ERP. Invoices to chase at day 30, day 45, day 60. If a person does it today with a checklist, an agent can usually do the first pass and route the exceptions to a human.",
+    "Startups building an agent as the product. If the pitch is an AI that does the work for a specific industry, we build the agent plus the parts investors never see: the approval flow, the rate limits, the audit trail, the cost ceiling. Startups can engage every service we offer, not just the four listed under startups.",
+    "Teams that tried an agent framework demo that worked in the screencast and fell over on real data. We are happy to start from what you have rather than insisting on a rewrite."
+  ],
+  "included": [
+    {
+      "title": "Explicit action permissions",
+      "line": "Each action the agent can take is declared up front; anything not declared is refused, not attempted."
+    },
+    {
+      "title": "Human approval queues",
+      "line": "Risky actions wait for a named person to approve, with the agent's reasoning attached to each request."
+    },
+    {
+      "title": "Full audit log",
+      "line": "Every action records what triggered it, what changed, and when, so any incident can be reconstructed."
+    },
+    {
+      "title": "Hard cost ceilings",
+      "line": "Model spend on OpenAI or Anthropic is capped in code, so a bad loop stops itself instead of running all night."
+    },
+    {
+      "title": "Retries and dead-letter queues",
+      "line": "Failed actions retry with backoff on Inngest; anything that keeps failing lands in a queue a human reviews."
+    },
+    {
+      "title": "Second-model code review",
+      "line": "Generated code is checked by a second model against its requirement, then an engineer reads every change."
+    },
+    {
+      "title": "Your repo from day one",
+      "line": "The repository is created in your GitHub organisation on day one, with full IP assignment."
+    },
+    {
+      "title": "30-day fix window",
+      "line": "Anything we built that breaks in the first 30 days after launch is fixed at no cost."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scope and fixed quote",
+      "body": "A scoping call, with a mutual NDA signed the same day before you share anything. One fixed price in writing within 48 hours, and the number does not change after kickoff.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "First workflow live",
+      "body": "We pick the narrowest useful workflow and ship it behind an approval queue. You get a live clickable URL by the end of week one and a written update every day.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Widen the remit",
+      "body": "As the audit log builds a track record, we add actions and loosen approvals where you decide the record supports it. Permissions and anything touching money stay engineer-designed.",
+      "range": "Week 2 onwards"
+    },
+    {
+      "title": "Launch and support",
+      "body": "Anything we built that breaks in the first 30 days is fixed at no cost. After that, optional monthly care you can stop at any time.",
+      "range": "After launch"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do you keep an AI agent from doing something it shouldn't?",
+      "a": "The agent works from an allowlist: every action type is granted explicitly and anything else is refused. Refunds, customer emails, and billing changes sit in an approval queue until a person signs off, and every step is written to an audit log. Engineers, not the model, design the permission system and anything touching money or personal data."
+    },
+    {
+      "q": "Do I need an AI agent or just workflow automation?",
+      "a": "If the steps never vary, you do not need an agent. Plain workflow automation is cheaper to run, easier to test, and never hallucinates. Agents earn their keep when inputs are messy: free-text emails, documents, edge cases a rules engine cannot enumerate. We will tell you which one fits on the scoping call, even when the answer is the simpler option."
+    },
+    {
+      "q": "How long does it take to build a custom AI agent?",
+      "a": "A narrow, single-workflow agent is typically live in 2–4 weeks. Agents that act across several systems usually take 3–8 weeks. Either way you get a live clickable URL by the end of week one and daily written updates until launch."
+    },
+    {
+      "q": "How much does a custom AI agent cost?",
+      "a": "We quote one fixed price, in writing, within 48 hours of a scoping call, and the number does not change after kickoff. We never bill hourly. US and international clients pay in USD; Indian clients pay in INR with GST."
+    }
+  ],
+  "related": ["workflow-automation", "ai-machine-learning", "ai-app-security-audit"],
+  "relatedProse": "When the work is fully deterministic, Workflow automation is the cheaper tool and we will say so. AI & machine learning covers model features beyond agents, and an AI app security audit is worth running before any agent gets write access to production data."
+}

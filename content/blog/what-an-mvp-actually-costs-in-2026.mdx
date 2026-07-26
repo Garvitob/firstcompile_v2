@@ -1,0 +1,92 @@
+---
+title: "What an MVP actually costs in 2026"
+date: "2026-07-21"
+excerpt: "Four routes, four very different numbers for the same product. What moves the price is rarely the feature list."
+---
+
+Ask four vendors to price the same MVP and the quotes can differ by a factor of ten. That is not dishonesty. Each route carries a different cost structure and prices a different risk. Here is how the four common routes work, roughly what each costs in the current market, and what actually moves the number. The short version of that last part: it is almost never the number of screens.
+
+## The four routes
+
+### The big agency
+
+A named firm with case studies, a sales team, and a delivery process. Your project gets a project manager, a designer or two, several engineers, QA, and an account lead. You pay for all of them whether or not each one is on your project full time.
+
+Market observation: MVP engagements at established US and EU agencies commonly land between $150,000 and $400,000, with timelines of four to six months. Some go higher.
+
+What you are buying is process and accountability. Documented handoffs. Someone answers the phone. Their insurance certificates and completed security questionnaires satisfy enterprise procurement, and sometimes that alone justifies the premium.
+
+What you are also buying: overhead. The senior people who sold you the project rarely write the code. Your build is one of many in the shop. Change requests go through a ticketing process, and the meter runs while they do.
+
+### The freelancer
+
+One person, hired directly. Market rates run from $30 an hour to $200 or more, and MVP totals from $5,000 to $50,000 depending on scope and seniority.
+
+This is the cheapest route and sometimes the correct one. A good freelancer has no handoffs, no account layer, and full context in one head. If your MVP is a marketing page, a signup form, and a Stripe checkout, a strong freelancer will beat every other option on both price and speed. Do that.
+
+The risks are structural, not personal. Bus factor of one: illness, a bigger client, a lost laptop. No second reader on code that touches money or personal data. And solo work tends to fail quietly in exactly the places that matter most, authorisation logic and data modelling, because nobody is there to argue.
+
+### The offshore team
+
+An hourly team in a lower-cost market, commonly $15 to $50 per hour per person. MVP totals typically get quoted between $20,000 and $80,000, though hourly billing makes the final number hard to pin down in advance.
+
+That last clause is the core trade-off. When billing is hourly, scope drift is revenue. Not malice, just incentives. The route works well when two things are true: the spec is written down in detail before work starts, and someone technical on your side reads the pull requests daily. With those two conditions met, offshore hourly can be the most cost-efficient serious option on this list.
+
+Without them, expect the timeline to stretch. Also settle ownership on day one: whose GitHub organisation holds the repository, who holds the production credentials, and whether IP assignment is in the contract. These questions are cheap before kickoff and expensive after.
+
+### The AI-assisted studio
+
+A small senior team where models write the boilerplate, tests, and migrations, and engineers design the data model and permissions, build anything touching money or personal data, and read every change. The economics work because models make the routine work fast, and engineers spend their time on the parts that can go wrong. Market observation: shops in this category quote fixed prices well under typical agency numbers and ship MVPs in 2–6 weeks.
+
+Full disclosure: this is the model we run at FirstCompile, so discount our description accordingly.
+
+The category has a real failure mode. Some shops let the model write everything and review nothing. The output demos well and falls over on edge cases: the webhook that arrives twice, the refund that races the payout, the user who belongs to two organisations. When evaluating anyone in this category, ask who reads the diffs and how generated code is checked against the requirement it was written for. If the answer is vague, you are buying unreviewed output at a studio price.
+
+## What actually moves the price
+
+Screen count is the worst common predictor of cost. A 30-screen CRUD app is routinely cheaper than a 5-screen app that moves money between strangers. These are the variables that matter.
+
+### Integrations
+
+Every third-party API brings an auth handshake, rate limits, retries, and webhooks that arrive twice, late, or never. Sandbox behaviour diverges from production. A queue with a dead-letter strategy stops one failed delivery from silently dropping an order. Budget days per nontrivial integration, not hours, and expect the estimate to be wrong on whichever API has the worst documentation.
+
+### Payments
+
+The dividing line is whether money moves in one direction or between parties. A hosted checkout is a day or two of work. Marketplace payouts, refunds, disputes, proration, tax invoices with GST or sales tax, and month-end reconciliation are weeks, because every one of them has failure states involving real money and unhappy humans.
+
+### Compliance and personal data
+
+Health records, payment data, minors, anything covered by GDPR or India's DPDP Act. Concretely this means audit logs, retention policies, deletion on request, encryption at rest, and often row-level security in the database. None of it shows up in a screen count. All of it shows up in the invoice.
+
+### Authorisation complexity
+
+Login is solved; every framework ships it. Authorisation is not. Roles, organisations, team invitations, per-record permissions, SSO for that one enterprise customer. "Who can see what" is a data-model problem, and getting it wrong late means migrating production data. If your product has organisations that contain users who own records that get shared, say so in the first call. It moves the price more than any feature on your list.
+
+### Admin surfaces
+
+The application your users never see: support tooling, manual refunds, user impersonation for debugging, content moderation, feature flags. In practice this is often a third of the build. A vendor who quotes without asking about admin is quoting the demo, not the product.
+
+## Where the cheap route is genuinely right
+
+Some honest concessions.
+
+If you are validating demand, do not build custom software at all. A landing page, a waitlist, a form tool, a manual back office. Spend hundreds, not tens of thousands, until strangers show intent.
+
+If it is an internal tool for ten users, Retool or a shared spreadsheet with permissions is a fine v1.
+
+If the build is well specified and you have a technical founder with an hour a day to review code, offshore hourly is defensible economics.
+
+And if the product truly is a form in front of a database, hire the freelancer and skip everyone selling you more.
+
+## Eight questions to ask before signing
+
+1. Is the price fixed in writing, and what exactly happens to it when scope changes.
+2. Whose GitHub organisation holds the repository from day one, and is full IP assignment in the contract.
+3. When do I first click a live URL. In 2026, "end of week one" is a reasonable ask.
+4. Who reads every line of code, including generated code, and how is it verified against the requirement.
+5. What happens in the first 30 days after launch when something breaks. At whose cost.
+6. How do updates arrive: daily written notes, a weekly call, or silence until the demo.
+7. What is explicitly out of scope. A vendor who cannot name exclusions has not scoped.
+8. Will you sign a mutual NDA before I share anything, and how fast.
+
+Any serious vendor can answer all eight on the first call, in plain language. If the answers are vague, the number on the quote is not the number you will pay. If you want our answers to the same list, write to hello@firstcompile.com.

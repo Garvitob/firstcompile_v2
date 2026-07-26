@@ -1,0 +1,91 @@
+{
+  "slug": "vibe-code-to-production",
+  "name": "Vibe-code to production",
+  "oneLiner": "Built fast with AI tools. We add the security, tests, and deploy pipeline it needs for real users.",
+  "metaTitle": "Make your vibe-coded app production ready | FirstCompile",
+  "metaDescription": "We take vibe-coded apps, built fast with AI tools, and make them production ready: security, tests, clean deploys. One fixed price in writing, never hourly.",
+  "kicker": "For startups",
+  "h1": "Your vibe-coded app, ready for real users.",
+  "intro": [
+    "AI coding tools are genuinely good at getting a product in front of people. In a weekend you can have signups, payments, and a dashboard. What you usually do not have: authorisation checks on every route, secrets kept out of the client bundle, database migrations you can run twice, or tests around the code that touches money. None of that matters until it does. Then it matters all at once.",
+    "This service takes what you built and turns it into something you can run a business on. We read every line first. Then we fix in order of damage: security holes, then data integrity, then reliability. Most of your code survives. Rewrites happen only where the original approach cannot be patched, and we tell you which parts those are before we start.",
+    "The work happens in your repository, created in your GitHub organisation on day one. You get a live URL by the end of week one and a written update every day. Most projects go live in 2–4 weeks. Larger systems, with payments, multi-tenant data, and background processing, run 3–8 weeks."
+  ],
+  "whoFor": [
+    "Founders who built the first version themselves with AI tools and now have real users, or an investor asking pointed questions about security. The product works. You are not sure it is safe, and you would rather hear it from us than from an incident.",
+    "Established businesses too. A common case: someone on the ops team built an internal tool with an AI assistant, it spread, and now it holds customer records or invoice data. It needs proper access control and a backup story before it grows any further.",
+    "Either way, the starting point is the same. A mutual NDA is signed before you share anything, same day, as standard. Then we read the code."
+  ],
+  "included": [
+    {
+      "title": "Line-by-line code review",
+      "line": "An engineer reads every file before anything changes and flags what can stay, what needs patching, and what has to go."
+    },
+    {
+      "title": "Security fixes first",
+      "line": "Authorisation on every route, secrets out of the client bundle, input validation, and rate limits on anything public."
+    },
+    {
+      "title": "A real database layer",
+      "line": "Versioned PostgreSQL migrations, sane indexes, and row-level security where tenants share tables."
+    },
+    {
+      "title": "Tests where they matter",
+      "line": "Coverage on payments, authentication, and personal data first, not a vanity percentage."
+    },
+    {
+      "title": "Background jobs with retries",
+      "line": "Fire-and-forget API calls move to Inngest queues with retries and a dead-letter path, so a failed webhook does not silently drop an order."
+    },
+    {
+      "title": "AI spend ceilings",
+      "line": "If your app calls OpenAI or Anthropic models, we add hard cost caps so a runaway loop cannot burn your budget overnight."
+    },
+    {
+      "title": "Your repo, your IP",
+      "line": "The repository lives in your GitHub organisation from day one, with full IP assignment in writing."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scope and sign",
+      "body": "A scoping call, a mutual NDA signed the same day before you share code, and one fixed price in writing within 48 hours. The number does not change after kickoff.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "Audit and rank",
+      "body": "We read the whole codebase and rank every finding by damage, from data leaks down to cosmetic bugs. You get the list and the order we will work in.",
+      "range": "Days 3–5"
+    },
+    {
+      "title": "Fix in order of damage",
+      "body": "Security first, then data, then reliability. A live URL is up by the end of week one and updated continuously, with a written update from us every day.",
+      "range": "Week 1 onwards"
+    },
+    {
+      "title": "Harden and hand over",
+      "body": "Tests, deploy pipeline, monitoring, and a handover walkthrough. For 30 days after launch, anything we built that breaks is fixed at no cost.",
+      "range": "Weeks 2–4"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can a vibe-coded app go to production without a full rewrite?",
+      "a": "Usually, yes. Once security and data handling are fixed, most of the code can stay. Full rewrites are the exception, and when a section does need one we say so before work starts, with the reason in writing."
+    },
+    {
+      "q": "What is usually wrong with AI-generated code?",
+      "a": "The same patterns repeat: missing authorisation checks, so any logged-in user can read another user's data; API keys shipped in the client bundle; no database migrations; no tests around payments. None of these show up in a demo. All of them show up in production."
+    },
+    {
+      "q": "How long does it take to make an AI-built app production ready?",
+      "a": "Most projects are done in 2–4 weeks. Larger systems, for example multi-tenant apps with payments and background processing, run 3–8 weeks. You get a live URL by the end of week one and a written update every day, so progress is visible throughout."
+    },
+    {
+      "q": "Who owns the code after the cleanup?",
+      "a": "You do, from day one. The repository is created in your GitHub organisation before work begins and every commit lands there, with full IP assignment. If we stop working together, you lose nothing."
+    }
+  ],
+  "related": ["ai-app-security-audit", "mvp-development", "cloud-devops"],
+  "relatedProse": "If you want a ranked risk report before committing to fixes, an AI app security audit is the smaller first step. If the product is still finding its shape, MVP development covers the build itself, and Cloud & DevOps handles hosting, deploys, and monitoring once you are live."
+}

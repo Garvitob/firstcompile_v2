@@ -1,0 +1,95 @@
+{
+  "slug": "industry-4-0-industrial-automation",
+  "name": "Industry 4.0 & industrial automation",
+  "oneLiner": "Machine monitoring, plant dashboards, and downtime tracking for factories.",
+  "metaTitle": "Industry 4.0 & industrial automation | FirstCompile",
+  "metaDescription": "Machine monitoring, plant dashboards, and downtime tracking for factories. MQTT, Modbus, TimescaleDB, Grafana. One fixed price, live URL from week one.",
+  "kicker": "For factories",
+  "h1": "Your plant floor, live on a dashboard.",
+  "intro": [
+    "Most factories already generate the data they need. It sits in PLCs, on HMI screens, in a SCADA system nobody exports from, and on paper logs filled in at the end of each shift. So downtime gets discovered the next morning, OEE gets calculated in a spreadsheet a week later, and nobody fully trusts either number.",
+    "We build the software layer on top of the machines you already have. We read data over MQTT or Modbus, store it in TimescaleDB, and put it on screens with Grafana or a custom Next.js frontend. Alerts when a line stops. Shift reports that write themselves. A downtime number that comes from the machine, not from memory.",
+    "One boundary worth stating up front: we are a software company, not a controls integrator. We do not write PLC logic and we do not touch safety systems. We connect to what is already there, read-only wherever possible. Most projects go live in 3–8 weeks, with a working URL from the end of week one."
+  ],
+  "whoFor": [
+    "A plant with ten or fifty machines and no live view of any of them. Downtime is logged on clipboards, OEE is a monthly argument, and the one person who understood the SCADA setup has left. You want numbers you can defend without replacing hardware that still runs fine.",
+    "Hardware and IoT startups fit too. If you are building a sensor, gateway, or machine and need the software behind it, the ingestion pipeline, the dashboards, the customer-facing app, we build that side while you build the physical product.",
+    "It also suits established manufacturers whose data is locked inside one vendor's historian. Moving it into open tools like TimescaleDB and Grafana means you own the data, the queries, and the repository they live in."
+  ],
+  "included": [
+    {
+      "title": "Machine data collection",
+      "line": "Connections to PLCs, sensors, and gateways over MQTT and Modbus, read-only wherever possible."
+    },
+    {
+      "title": "Time-series storage",
+      "line": "TimescaleDB with compression and retention policies, so years of readings stay fast to query."
+    },
+    {
+      "title": "Plant dashboards",
+      "line": "Grafana for engineers, custom Next.js screens for the floor and the office, each showing what that audience needs."
+    },
+    {
+      "title": "Downtime and OEE tracking",
+      "line": "Availability, performance, and quality computed from machine signals, with the raw readings stored so the numbers can be checked."
+    },
+    {
+      "title": "Alerts and shift reports",
+      "line": "Threshold alerts when a line stops, and scheduled reports built as Inngest background jobs with retries when a send fails."
+    },
+    {
+      "title": "Operator and manager apps",
+      "line": "React Native apps for tagging downtime reasons on the floor and checking the plant from a phone."
+    },
+    {
+      "title": "Your repo, your data",
+      "line": "The repository lives in your GitHub organisation from day one, with full IP assignment and no vendor lock on the data."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scope and fixed quote",
+      "body": "A mutual NDA the same day, then a call to walk through your machines, protocols, and what data already exists. You get one fixed price in writing within 48 hours, and it does not change after kickoff.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "First machine on a screen",
+      "body": "We connect one machine, or a simulator if site access takes longer, and put its data on a live URL you can open. Daily written updates start here.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Build out the plant",
+      "body": "Remaining machines, dashboards, alerts, and reports, added to the same URL as they land. Engineers design the data model and read every change; AI writes the boilerplate and tests.",
+      "range": "Weeks 2–7"
+    },
+    {
+      "title": "Launch and the 30-day window",
+      "body": "Anything we built that breaks in the first 30 days is fixed at no cost. After that, optional monthly care you can stop any time.",
+      "range": "After launch"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need to replace my PLCs or SCADA system to get machine monitoring?",
+      "a": "No. Monitoring software can read from existing PLCs over Modbus and from gateways over MQTT without changing any control logic. FirstCompile connects read-only wherever possible and does not touch safety systems or PLC programming. Your existing controls keep running as they are."
+    },
+    {
+      "q": "How do you get data out of older machines with no network port?",
+      "a": "Retrofit sensors are the usual answer: a current clamp, vibration sensor, or optical counter wired to a small gateway that publishes MQTT. That gives you run state and cycle counts without opening the machine's control cabinet. Some very old machines are not worth connecting, and it is cheaper to say so during scoping than to find out after."
+    },
+    {
+      "q": "How long does it take to build a factory monitoring dashboard?",
+      "a": "FirstCompile puts the first machine's data on a live URL by the end of week one, and most full systems take 3–8 weeks depending on machine count and protocols. You get daily written updates throughout. Site access and network setup on the plant side are usually the slowest part."
+    },
+    {
+      "q": "How much does custom industrial monitoring software cost?",
+      "a": "FirstCompile quotes one fixed price, in writing, within 48 hours of a scoping call. The work is never billed hourly and the number does not change after kickoff. The price depends on machine count, protocols, and how much of the dashboard and alerting layer you need."
+    }
+  ],
+  "related": [
+    "data-business-intelligence",
+    "workflow-automation",
+    "custom-erp-crm"
+  ],
+  "relatedProse": "Plant data rarely stays on the plant floor. Data & business intelligence covers the reporting layer on top of it, Workflow automation handles what happens after an alert fires, and Custom ERP & CRM connects machines to orders, inventory, and maintenance."
+}

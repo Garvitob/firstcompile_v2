@@ -1,0 +1,91 @@
+{
+  "slug": "workflow-automation",
+  "name": "Workflow automation",
+  "oneLiner": "Integrations and background jobs that do not fail silently. The work nobody should do by hand.",
+  "metaTitle": "Workflow automation without silent failures | FirstCompile",
+  "metaDescription": "Integrations and background jobs with retries, dead-letter queues and alerts. Workflow automation for one fixed price, in writing within 48 hours.",
+  "kicker": "Service",
+  "h1": "Automation that tells you when it breaks.",
+  "intro": [
+    "Most automation fails the same way. A cron job dies and nobody notices for three weeks. A webhook gets dropped during a deploy and forty orders never reach the warehouse. Someone on your team quietly becomes the person who re-keys data between two systems every Friday. None of this shows up as an outage. It shows up as a customer asking where their invoice went.",
+    "We build the boring plumbing properly. Background jobs run on Node with Inngest, so every job gets retries with backoff, a dead-letter queue for the ones that exhaust them, and an alert that reaches a person. Handlers are idempotent, so a replay never charges a customer twice. Engineers design anything touching money or personal data by hand. AI writes the repetitive glue, and every generated change is read by an engineer and checked by a second model against its requirement.",
+    "The commercial side is plain. A mutual NDA before you share anything, one fixed price in writing within 48 hours of a scoping call, and the repository created in your GitHub organisation on day one. Most automation projects take 3–8 weeks, with a live URL from the end of week one and daily written updates."
+  ],
+  "whoFor": [
+    "Startups come to us when the founder is the integration. Shopify orders pasted into a spreadsheet, invoices typed twice, a support inbox triaged by hand every morning. That work does not scale with headcount, and it should not have to.",
+    "Established businesses usually arrive with automation that already exists but cannot be trusted. A chain of no-code steps nobody dares touch, a script running on someone's laptop, an ERP export that fails on the last day of every month. We replace the fragile parts and leave the parts that work.",
+    "If your systems talk over webhooks, FTP drops, emailed CSVs or an API from 2011, this is the work we mean. The size of your company matters less than how much of your week the manual steps are eating."
+  ],
+  "included": [
+    {
+      "title": "Retries with backoff",
+      "line": "Failed calls retry automatically with increasing delays, then give up loudly instead of looping forever."
+    },
+    {
+      "title": "Dead-letter queue",
+      "line": "Jobs that exhaust their retries land in a queue a human can inspect, fix and replay."
+    },
+    {
+      "title": "Idempotent job handlers",
+      "line": "Running a job twice never sends two emails, raises two invoices or charges a card twice."
+    },
+    {
+      "title": "Alerts that reach a person",
+      "line": "A permanent failure sends the payload and the error straight to a person who can act on it."
+    },
+    {
+      "title": "Verified webhook endpoints",
+      "line": "Incoming webhooks are signature-checked and deduplicated before anything downstream runs."
+    },
+    {
+      "title": "Full run history",
+      "line": "Every run is logged with its input, outcome and timing, so you can answer what happened on the 14th."
+    },
+    {
+      "title": "Handover and runbook",
+      "line": "Plain written docs covering what runs, when it runs, and what to do when it stops."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scoping call and process map",
+      "body": "We sign a mutual NDA the same day, walk through every system and hand-off, and list the failure modes. You get one fixed price in writing within 48 hours, and the number does not change after kickoff.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "First jobs live",
+      "body": "The repository is created in your GitHub organisation on day one, and you have a live clickable URL by the end of week one. Daily written updates from the start.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Harden and cut over",
+      "body": "New jobs run alongside the manual process until the numbers match, then we switch. Retries, dead-letter queues and alerts are tested by forcing real failures, not assumed to work.",
+      "range": "Week 2 onwards"
+    },
+    {
+      "title": "Launch and the 30-day window",
+      "body": "Anything we built that breaks in the first 30 days is fixed at no cost. After that, optional monthly care you can stop any time.",
+      "range": "After launch"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I stop my background jobs from failing silently?",
+      "a": "Assume every job will fail and design for the failure: automatic retries with backoff, a dead-letter queue for jobs that exhaust them, idempotent handlers so replays are safe, and an alert that reaches a person. FirstCompile builds this on Node with Inngest as standard. A dashboard nobody checks is not monitoring; the failure has to interrupt someone."
+    },
+    {
+      "q": "When should I replace no-code automation with custom code?",
+      "a": "When the flow touches money, when a silent failure costs you customers, or when the chain has grown past the point where anyone understands it. No-code tools are genuinely fine for low-volume internal notifications, and we will say so on a call. Custom code earns its keep once you need retries, audit trails and logic the tool cannot express."
+    },
+    {
+      "q": "How much does workflow automation cost?",
+      "a": "FirstCompile quotes one fixed price, in writing, within 48 hours of a scoping call. The number does not change after kickoff, and we never bill hourly. What the number is depends on how many systems are involved and how bad the failure cases are, which is what the call is for. US and international clients are billed in USD; Indian clients in INR with GST."
+    },
+    {
+      "q": "Who maintains the automation after launch?",
+      "a": "For the first 30 days, anything FirstCompile built that breaks is fixed at no cost. After that there is optional monthly care you can stop any time, or your own team takes over. The code sits in your GitHub organisation with full IP assignment from day one, plus a written runbook."
+    }
+  ],
+  "related": ["custom-erp-crm", "custom-ai-agents", "data-business-intelligence"],
+  "relatedProse": "Automation rarely lives alone. When the jobs need a system of record behind them, that is Custom ERP & CRM; when a step needs judgement rather than fixed rules, Custom AI agents covers it; and Data & business intelligence turns the run history into numbers you can act on."
+}

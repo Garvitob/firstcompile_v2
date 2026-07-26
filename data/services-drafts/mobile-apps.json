@@ -1,0 +1,95 @@
+{
+  "slug": "mobile-apps",
+  "name": "Mobile apps",
+  "oneLiner": "iOS and Android from one codebase. Same backend, same quality bar.",
+  "metaTitle": "iOS and Android from one codebase | FirstCompile",
+  "metaDescription": "iOS and Android mobile apps in React Native from one codebase. One fixed price in writing, code in your GitHub from day one, and a live build by week one.",
+  "kicker": "Service",
+  "h1": "Ship to both app stores from one codebase.",
+  "intro": [
+    "Building an app twice is how most mobile budgets die. One team for iOS, another for Android, two codebases that drift until every bug exists in two flavours. We build in React Native instead: one TypeScript codebase that ships to both stores and shares types and logic with the backend behind it.",
+    "That backend is the same stack we use everywhere. Node and PostgreSQL, with Inngest running background jobs like push notification fan-out and data syncs. If you want a web version later, it reuses the same API. AI writes the boilerplate, tests, and migrations. Engineers design the data model, the permission rules, and anything touching money or personal data, and they read every change before it merges. Generated code is also checked by a second model against its requirement.",
+    "You get a live URL you can open from the end of week one, updated continuously, plus a written update every day. An MVP is typically live in 2–4 weeks. One honest caveat: React Native is the wrong tool for heavy 3D or work that lives deep in platform APIs. If that is your app, we will say so on the scoping call."
+  ],
+  "whoFor": [
+    "Startups whose product only makes sense on a phone. The camera, GPS, push notifications, or offline use is the product, not an extra. We build the first version and get it into both stores.",
+    "Established businesses whose staff work away from a desk. Technicians filling in paper forms, drivers confirming deliveries, sales reps who need the CRM in a pocket. The app talks to your existing systems through an API we build or extend.",
+    "And teams that already have a web product and keep hearing \"is there an app?\" from customers. The app reuses the backend you already run, so there is no second engineering effort."
+  ],
+  "included": [
+    {
+      "title": "One React Native codebase",
+      "line": "iOS and Android from the same TypeScript code, so every fix and feature ships to both platforms at once."
+    },
+    {
+      "title": "Backend and API included",
+      "line": "Node and PostgreSQL behind the app, with Inngest running background jobs like push fan-out and syncs."
+    },
+    {
+      "title": "Push notifications and deep links",
+      "line": "Notification delivery, tap-through routing, and links that open the right screen instead of the home tab."
+    },
+    {
+      "title": "Offline support where needed",
+      "line": "Local storage with queued writes that sync when the connection returns, for apps used in the field."
+    },
+    {
+      "title": "Sign-in and permissions",
+      "line": "Authentication, roles, and authorisation rules designed by an engineer, never left to generated code."
+    },
+    {
+      "title": "App store submission",
+      "line": "Store listings, screenshots, and review submissions for both Apple and Google, handled start to finish."
+    },
+    {
+      "title": "Crash reporting from the first build",
+      "line": "Every build ships with crash reporting wired in, so we see failures before your users report them."
+    },
+    {
+      "title": "30-day fix window",
+      "line": "Anything we built that breaks in the first 30 days after launch is fixed at no cost."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scope and quote",
+      "body": "A mutual NDA is signed before you share anything, same day. Within 48 hours of the scoping call you have one fixed price in writing, and it does not change after kickoff.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "Repo and first build",
+      "body": "The repository is created in your GitHub organisation on day one. By the end of week one there is a live URL you can open and share.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Build in the open",
+      "body": "The build updates continuously and you get a written update every day. AI writes boilerplate and tests; engineers design the data model and permissions and read every change.",
+      "range": "Weeks 2–4"
+    },
+    {
+      "title": "Launch and afterwards",
+      "body": "We submit to both stores and stay on for a 30-day window where anything we built that breaks is fixed at no cost. After that, optional monthly care you can stop any time.",
+      "range": "Launch onwards"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need separate native apps for iOS and Android?",
+      "a": "For most business and consumer apps, no. One React Native codebase ships to both stores and shares logic with the backend. The exceptions are heavy 3D, games, and apps built around low-level platform APIs, where native still wins. We will tell you on the scoping call if yours is one of those."
+    },
+    {
+      "q": "How long does it take to build a mobile app?",
+      "a": "An MVP is typically live in 2–4 weeks. Apps with a custom backend and more screens usually run 3–8 weeks. Add a few days at the end for Apple and Google review, which we handle but do not control."
+    },
+    {
+      "q": "Who owns the code when the app is done?",
+      "a": "You do, from the start. The repository is created in your GitHub organisation on day one and the contract assigns full IP to you. If we stop working together, you lose nothing."
+    },
+    {
+      "q": "What happens if the app breaks after launch?",
+      "a": "Every project includes a 30-day post-launch window: anything we built that breaks is fixed at no cost. After that there is optional monthly care, which you can stop at any time."
+    }
+  ],
+  "related": ["mvp-development", "application-development"],
+  "relatedProse": "If the app is your first product, MVP development covers scoping through launch end to end. If it sits next to a browser product, Application development is the same team and the same backend on the web side."
+}

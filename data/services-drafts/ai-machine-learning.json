@@ -1,0 +1,95 @@
+{
+  "slug": "ai-machine-learning",
+  "name": "AI & machine learning",
+  "oneLiner": "Practical AI in production: search, document intelligence, forecasting.",
+  "metaTitle": "Practical AI in production | FirstCompile",
+  "metaDescription": "AI and machine learning built for production: search, document intelligence, forecasting. One fixed price in writing, hard cost ceilings on every model call.",
+  "kicker": "Service",
+  "h1": "AI that makes it past the demo.",
+  "intro": [
+    "Most AI projects die between the demo and the deploy. The prototype answers questions well in a meeting, then falls apart on real data: retrieval pulls the wrong documents, the model invents figures, the API bill triples in a week. The gap is rarely the model. It is everything around it.",
+    "We build the parts around the model. Search over your own data, with the retrieval step measured rather than assumed. Document pipelines that pull structured fields out of invoices, contracts, and forms, and flag the ones they are not sure about. Forecasting from your sales or sensor history, with the expected error stated up front. Everything runs on OpenAI or Anthropic models behind hard cost ceilings, so a bad loop cannot burn a month's budget overnight.",
+    "You get one fixed price in writing within 48 hours of a scoping call, a live URL by the end of week one, and a written update every day. MVPs go live in 2–4 weeks; custom business systems take 3–8. The repository sits in your GitHub organisation from day one."
+  ],
+  "whoFor": [
+    "Startups adding an AI feature to a product, or building the product around one: semantic search, a support assistant grounded in your docs, extraction from user uploads. You do not need a data science team to start. You need one working feature with a cost ceiling.",
+    "Established businesses sitting on years of documents, tickets, or transactions and getting no answers out of them. Typical first projects: pulling line items from supplier invoices, forecasting stock by branch, making a decade of PDFs searchable by meaning instead of filename.",
+    "Also teams that already tried. If an internal experiment or an agency prototype stalled, we can take it over, measure where it actually fails, and either fix it or tell you plainly it is not worth pursuing."
+  ],
+  "included": [
+    {
+      "title": "Search over your data",
+      "line": "Semantic and keyword search combined, with retrieval quality measured against a test set before launch."
+    },
+    {
+      "title": "Document extraction pipelines",
+      "line": "Structured fields pulled from invoices, contracts, and forms, with a confidence score on every extracted field."
+    },
+    {
+      "title": "Forecasting from your history",
+      "line": "Demand, revenue, or sensor forecasts built on your own records. We tell you the expected error before you rely on it."
+    },
+    {
+      "title": "Hard cost ceilings",
+      "line": "Every OpenAI or Anthropic call runs behind a spend cap, so a usage spike cannot run up the bill."
+    },
+    {
+      "title": "Evaluation before launch",
+      "line": "A test set built from your real cases, run on every change, so quality regressions surface before users see them."
+    },
+    {
+      "title": "Human review queues",
+      "line": "Anything the model is unsure about lands in a queue for a person to clear before it reaches your records."
+    },
+    {
+      "title": "Background job plumbing",
+      "line": "Batch work like overnight extraction runs on Node with Inngest: retries, dead-letter queues, no dropped documents."
+    },
+    {
+      "title": "Your repo from day one",
+      "line": "Code lives in your GitHub organisation from day one, with full IP assignment."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scoping call and NDA",
+      "body": "A mutual NDA is signed before you share anything, same day, as standard. Within 48 hours you get one fixed price in writing, never hourly, and the number does not change after kickoff.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "First working slice",
+      "body": "We build the narrowest end-to-end version first: your real data in, real answers out, on a live URL you can click by the end of week one.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Measure and harden",
+      "body": "We build the evaluation set, tune retrieval or extraction against it, and wire in cost ceilings and review queues. You get a written update every day, and the URL stays current.",
+      "range": "Weeks 2–4"
+    },
+    {
+      "title": "Launch and 30-day cover",
+      "body": "It goes live in your infrastructure. For 30 days after launch, anything we built that breaks is fixed at no cost. After that, optional monthly care you can stop any time.",
+      "range": "From launch"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does it cost to add AI features to an existing app?",
+      "a": "We do not publish prices because scope varies too much for a published number to be honest. What we commit to: after a scoping call you get one fixed price in writing within 48 hours, it is never hourly, and it does not change after kickoff. Every AI feature also ships with a hard ceiling on model spend, so the running cost is capped as well."
+    },
+    {
+      "q": "Do I need my own training data to use AI in my business?",
+      "a": "Usually not, and you almost never need to train a model. Most business problems, search, document extraction, drafting, are solved by prompting a hosted OpenAI or Anthropic model over data you already have. Fine-tuning only makes sense after a prompted baseline has been measured and found wanting, and most projects never get there."
+    },
+    {
+      "q": "How do you stop an AI feature from making things up?",
+      "a": "You cannot remove hallucination entirely, and anyone who claims otherwise is selling something. You can constrain it: ground answers in retrieved documents, show sources, force structured outputs, and route low-confidence cases to a human queue. We also build an evaluation set from your real cases, so accuracy is a measured number rather than a feeling."
+    },
+    {
+      "q": "Can you take over an AI prototype our team already built?",
+      "a": "Yes. We start by measuring it against real cases, so the failure points are specific instead of anecdotal. Then we either harden it for production, with retrieval fixes, cost ceilings, review queues, and monitoring, or tell you plainly it is not worth pursuing. The repository sits in your GitHub organisation either way, so you keep everything."
+    }
+  ],
+  "related": ["custom-ai-agents", "data-business-intelligence", "workflow-automation"],
+  "relatedProse": "If you want the model to act rather than just answer, that work is Custom AI agents. Forecasting usually starts with clean reporting, which is Data & business intelligence, and the glue between systems is often Workflow automation."
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "ai-app-security-audit",
+  "name": "AI app security audit",
+  "oneLiner": "A full security review of your AI-generated codebase. Report in 5 working days.",
+  "metaTitle": "Security audit for AI-generated code | FirstCompile",
+  "metaDescription": "A full security audit of your AI-generated codebase for one fixed price. Written report with ranked findings in 5 working days. Offices in India and the US.",
+  "kicker": "For startups",
+  "h1": "Find the holes in your AI-generated code before someone else does.",
+  "intro": [
+    "AI coding tools are good at making things work. They are much less reliable at making things safe. The failure modes are consistent: API keys shipped to the browser, endpoints that check who you are but not what you are allowed to do, database rules left wide open so the demo works, no rate limits anywhere. None of this shows up in normal use. It shows up when someone goes looking.",
+    "An AI app security audit is us going looking first. We take read-only access to your repository and spend 5 working days on it: automated scanning for the known problems, then engineers reading the code, with the most time spent on authentication, authorisation, payments, and personal data. We use AI heavily in our own work, so we know the patterns these tools produce and where they cut corners.",
+    "You get a written report with every finding ranked by severity, the exact place in the code, and a concrete fix. Before any of that, we sign a mutual NDA, the same day, before you share anything. The price is fixed, in writing, within 48 hours of a scoping call, and it does not change after we start."
+  ],
+  "whoFor": [
+    "Founders who built an app with AI tools, have users or are about to, and know that nobody with security experience has read the code. The trigger is usually concrete: a first paying customer, an investor's due-diligence list, or a bigger client sending over a security questionnaire.",
+    "Established businesses fit just as well. A contractor or an internal team shipped an AI-assisted project, and you want a second pair of eyes before it touches customer records or payments. You do not need to have written a line of it yourself. A reader with no stake in the code is the point.",
+    "One honest limit: this is not a compliance certification. We will not hand you a SOC 2 badge. What you get is an engineering review: what is broken, how bad it is, and exactly how to fix it."
+  ],
+  "included": [
+    {
+      "title": "Authentication and authorisation review",
+      "line": "Every route and API endpoint checked for who can call it and what it lets them see or change."
+    },
+    {
+      "title": "Secrets and key handling",
+      "line": "API keys in client bundles, credentials left in repo history, tokens in localStorage, service keys with more power than they need."
+    },
+    {
+      "title": "Data isolation checks",
+      "line": "Row-level security, tenant separation, and whether one user can read another user's records by changing an ID in a URL."
+    },
+    {
+      "title": "Injection and input handling",
+      "line": "SQL injection, unsafe file uploads, and prompt injection anywhere your app passes user text to a model."
+    },
+    {
+      "title": "Dependency and configuration scan",
+      "line": "Known-vulnerable packages, debug flags left on, exposed admin routes, and permissive CORS settings."
+    },
+    {
+      "title": "Money and personal data paths",
+      "line": "Anything that touches payments or personal data gets a line-by-line read by an engineer, not just a scanner."
+    },
+    {
+      "title": "Ranked written report",
+      "line": "Each finding gets a severity, the exact file and line, and a fix you can hand to whoever writes the patch."
+    },
+    {
+      "title": "Report walkthrough call",
+      "line": "We go through the report together, answer questions, and help you decide what to fix first."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scoping call and NDA",
+      "body": "A short call to understand the app and what worries you. The mutual NDA is signed the same day, before you share anything, and the fixed price follows in writing within 48 hours.",
+      "range": "Before day 1"
+    },
+    {
+      "title": "Access and automated pass",
+      "body": "You grant read-only access to the repository. We run dependency, secret, and configuration scans to clear the known problems first.",
+      "range": "Day 1"
+    },
+    {
+      "title": "Manual review",
+      "body": "Engineers read the code, spending the most time on authentication, authorisation, payments, and personal data. Anything urgent is flagged the day we find it, before the report is written.",
+      "range": "Days 2–4"
+    },
+    {
+      "title": "Report and walkthrough",
+      "body": "You get the written report with ranked findings and concrete fixes, then a call to go through it. If you want us to do the fixing, that is a separate fixed-price quote.",
+      "range": "Day 5"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is AI-generated code less secure than code written by hand?",
+      "a": "AI-generated code is not automatically less secure, but it fails in predictable ways. AI tools optimise for code that runs, so they often skip authorisation checks, leave database rules open, and put secrets where they do not belong. A codebase that works perfectly in the demo can still let one user read another's data. That is exactly what an audit is for."
+    },
+    {
+      "q": "How long does an app security audit take?",
+      "a": "A FirstCompile security audit takes 5 working days from the day we get repository access, with the written report delivered at the end of that window. The clock starts once the NDA is signed and the fixed price is agreed. A very large codebase can need a longer window, and we will say so at scoping."
+    },
+    {
+      "q": "Do I have to give you my source code, and what protects it?",
+      "a": "Yes, an audit needs the source, but access is read-only and we sign a mutual NDA the same day, before you share anything. We do not need your production database or customer data to do the work. The repository stays in your GitHub organisation the whole time."
+    },
+    {
+      "q": "Will you fix the security issues you find?",
+      "a": "We can. Every finding in the report comes with a concrete fix, so your own team can do the work without us. If you would rather we did it, we quote a separate fixed price, and anything we build or fix is covered by our standard 30-day window where breakage is repaired at no cost."
+    }
+  ],
+  "related": [
+    "vibe-code-to-production",
+    "cloud-devops",
+    "technology-consulting"
+  ],
+  "relatedProse": "If the audit shows the codebase needs real rework rather than patches, Vibe-code to production is the follow-on: same code, taken to a supported release. Cloud & DevOps covers the infrastructure half of the same risk, and Technology consulting is the place to start if you are not yet sure an audit is the right first step."
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "data-business-intelligence",
+  "name": "Data & business intelligence",
+  "oneLiner": "One source of truth for your numbers. Reporting your team actually opens.",
+  "metaTitle": "One source of truth for your numbers | FirstCompile",
+  "metaDescription": "We build business intelligence your team opens: one PostgreSQL warehouse, tested pipelines, role-based dashboards. One fixed price in writing within 48 hours.",
+  "kicker": "Service",
+  "h1": "Stop arguing about whose spreadsheet is right.",
+  "intro": [
+    "Most companies do not have a data problem. They have a five-copies-of-the-data problem. Sales numbers live in the CRM, revenue in the billing tool, operations in spreadsheets, and every Monday someone spends half a day reconciling them. The totals never quite match, so nobody fully trusts any of them.",
+    "We build the boring, load-bearing version of business intelligence. A PostgreSQL warehouse that pulls from the tools you already use. Pipelines on Inngest with retries, a dead-letter queue, and an alert when a sync fails, so a broken feed never quietly corrupts a report. Dashboards scoped to what each role needs, in Grafana or a custom Next.js front end depending on who is reading them.",
+    "A typical build takes 3–8 weeks. You get a live clickable URL by the end of week one, updated continuously, plus a daily written update. The first dashboard you see runs on your data, not sample data. One fixed price, in writing, within 48 hours of a scoping call. The number does not change after kickoff."
+  ],
+  "whoFor": [
+    "You are a startup where the founder is the reporting layer. Every board meeting starts with three CSV exports and an evening of copy-paste, and the investor update numbers never match last month's deck.",
+    "Or you are an established business running an ERP, a CRM, and a wall of spreadsheets. Finance closes the month a week late because reconciliation is manual, and two departments report different revenue for the same quarter.",
+    "The shape of the work is the same either way: agree what each number means, pipe everything into one warehouse, and put a report in front of people that they open without being chased. We bill in USD for US and international clients, INR with GST in India, and our working hours overlap both time zones."
+  ],
+  "included": [
+    {
+      "title": "One PostgreSQL warehouse",
+      "line": "All your numbers land in one PostgreSQL schema, TimescaleDB where the data is time-series, designed after we have read your business model."
+    },
+    {
+      "title": "Pipelines that fail loudly",
+      "line": "Syncs run on Inngest with retries and a dead-letter queue, and you get an alert when a source breaks instead of a silently stale report."
+    },
+    {
+      "title": "Dashboards by role",
+      "line": "Founders, finance, and ops each get their own views, with row-level security so a team lead sees their team and nothing else."
+    },
+    {
+      "title": "One definition per metric",
+      "line": "Revenue, churn, and margin each get a single written definition your whole company agrees on before we chart anything."
+    },
+    {
+      "title": "Data models designed by engineers",
+      "line": "AI drafts the migrations and tests, but the schema, permissions, and anything touching money or personal data are designed and read by an engineer, then checked by a second model."
+    },
+    {
+      "title": "Scheduled digests and exports",
+      "line": "A scheduled email or Slack digest plus CSV export, because some people will never open a dashboard and the numbers should reach them anyway."
+    },
+    {
+      "title": "Your repo, your cloud",
+      "line": "The repository is created in your GitHub organisation on day one, the warehouse runs in your accounts, and the IP is assigned to you in full."
+    },
+    {
+      "title": "30-day fix window",
+      "line": "Anything we built that breaks in the first 30 days after launch is fixed at no cost, then optional monthly care you can stop any time."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scope and fixed quote",
+      "body": "A mutual NDA is signed the same day, before you share anything. After the scoping call you get one fixed price in writing within 48 hours.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "First dashboard live",
+      "body": "Repo created in your GitHub organisation, the first one or two sources connected, and a live URL showing a real dashboard on your data.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Sources, definitions, views",
+      "body": "Remaining integrations come in, metric definitions get agreed with your team, and role-based views take shape. Daily written updates throughout.",
+      "range": "Weeks 2–7"
+    },
+    {
+      "title": "Launch and handover",
+      "body": "Go-live with documentation your next hire can follow. For 30 days after, anything we built that breaks is fixed free.",
+      "range": "Weeks 3–8"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need a data warehouse or just dashboards on top of my existing tools?",
+      "a": "If you have one or two sources and simple questions, a dashboard straight on the source database can be enough, and we will say so on the call. A warehouse earns its keep when numbers from several tools disagree, or when reporting queries start slowing down the production app. We default to plain PostgreSQL because it is boring, well understood, and cheap to run."
+    },
+    {
+      "q": "How long does a business intelligence project take to build?",
+      "a": "Most of our builds go live in 3–8 weeks, depending on how many sources we connect and how messy they are. You see a live URL with a real dashboard on your own data by the end of week one, and it updates continuously from there. Daily written updates mean you are never guessing where things stand."
+    },
+    {
+      "q": "Who owns the code and the data after the project ends?",
+      "a": "You do, from the start. The repository is created in your GitHub organisation on day one and the IP is assigned to you in full. The warehouse and pipelines run in your own cloud accounts, so if we disappeared tomorrow everything would keep running."
+    },
+    {
+      "q": "What happens when a data pipeline breaks after launch?",
+      "a": "For 30 days after launch, anything we built that breaks is fixed at no cost. The pipelines retry on their own and failed records land in a dead-letter queue instead of vanishing, with an alert so someone knows. After the 30 days you can take optional monthly care, which you can stop any time, or hand the runbook to your own team."
+    }
+  ],
+  "related": ["custom-erp-crm", "workflow-automation", "ai-machine-learning"],
+  "relatedProse": "A reporting build often runs alongside a Custom ERP & CRM project, because the system that creates the data and the one that explains it are cheaper to design together. When you want the numbers to trigger actions, or forecasts instead of history, that is Workflow automation and AI & machine learning."
+}

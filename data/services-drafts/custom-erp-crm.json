@@ -1,0 +1,90 @@
+{
+  "slug": "custom-erp-crm",
+  "name": "Custom ERP & CRM",
+  "oneLiner": "Software shaped around how your company actually runs. Not the template.",
+  "metaTitle": "Custom ERP & CRM built around your process | FirstCompile",
+  "metaDescription": "Custom ERP and CRM systems built around your actual workflows. One fixed price in writing within 48 hours, code in your GitHub organisation from day one.",
+  "kicker": "Business systems",
+  "h1": "The system your spreadsheets have been trying to be.",
+  "intro": [
+    "Most companies we talk to run on spreadsheets, WhatsApp threads, and an off-the-shelf CRM nobody fully configured. Orders live in one place, stock in another, and the one person who knows how it all connects is on leave. Off-the-shelf ERPs promise to fix this, then ask you to change how you work to fit their screens.",
+    "We build the system around your process instead. That starts with sitting down with the people who do the work and mapping what they handle every day: orders, quotes, approvals, stock, invoices. An engineer turns that into a PostgreSQL data model, permissions, and screens your team will actually open. Custom business systems typically go live in 3–8 weeks.",
+    "You see it early. There is a live clickable URL from the end of week one, updated continuously, plus a written update every day. The repository sits in your GitHub organisation from day one, so the code is yours whether or not you keep working with us."
+  ],
+  "whoFor": [
+    "A distributor whose order book is a shared spreadsheet with seventeen tabs. A services firm tracking projects across three tools that do not talk to each other. A manufacturer whose ERP quote came back at a number that made no sense for a company their size.",
+    "Established businesses are the usual fit, but startups engage this too, often when the operations side outgrows Notion before the product does. The honest test is simpler than company stage: if your process is stable enough to describe, it is stable enough to build for. If it changes every month, an off-the-shelf tool may still be the right call, and we will say so on the scoping call."
+  ],
+  "included": [
+    {
+      "title": "Data model designed by engineers",
+      "line": "An engineer maps how your orders, quotes, stock, and approvals move through the company, then designs a PostgreSQL schema to match."
+    },
+    {
+      "title": "Permissions and audit trail",
+      "line": "Row-level security so a sales rep sees their own accounts, the accountant sees everything, and every change is logged with who and when."
+    },
+    {
+      "title": "Billing, invoicing, and GST",
+      "line": "Invoice generation with GST handled correctly for Indian entities; anything touching money is designed and reviewed by an engineer, never shipped unread."
+    },
+    {
+      "title": "Migration from your spreadsheets",
+      "line": "We import your existing sheets and exports with a dry run you can check line by line before cutover."
+    },
+    {
+      "title": "Integrations that survive failures",
+      "line": "Connections to accounting tools, email, or a Shopify store run as background jobs with retries and a dead-letter queue, so a flaky API does not lose an order."
+    },
+    {
+      "title": "Reports from live data",
+      "line": "The numbers someone currently assembles by hand every Friday, generated on demand from the same database the work happens in."
+    },
+    {
+      "title": "A 30-day fix window",
+      "line": "Anything we built that breaks in the first 30 days is fixed at no cost; after that, optional monthly care you can stop any time."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scoping call and fixed quote",
+      "body": "We sign a mutual NDA the same day, before you share anything, then walk your process end to end. You get one fixed price in writing within 48 hours, and it does not change after kickoff.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "Data model and first screens",
+      "body": "The repository is created in your GitHub organisation on day one. By the end of week one there is a live clickable URL your team can poke at.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Build in the open",
+      "body": "The URL changes daily and you get a written update every day. Your team clicks through real screens with real names on them and corrects us while corrections are cheap.",
+      "range": "Week 2 onwards"
+    },
+    {
+      "title": "Migration, cutover, and the 30-day window",
+      "body": "We import your data, run the old and new systems side by side, then cut over. Anything we built that breaks in the first 30 days is fixed at no cost.",
+      "range": "Weeks 3–8"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does a custom ERP or CRM cost?",
+      "a": "FirstCompile quotes one fixed price, in writing, within 48 hours of a scoping call, and the number does not change after kickoff. We never bill hourly. Off-the-shelf software is cheaper upfront if your process fits its template; custom makes sense when per-seat fees and manual workarounds cost more than they save."
+    },
+    {
+      "q": "How long does it take to build a custom ERP system?",
+      "a": "Custom business systems from FirstCompile typically go live in 3–8 weeks, with a clickable URL from the end of week one. What pushes a project toward the longer end is usually data migration and third-party integrations, not the screens. You get a written update every day either way."
+    },
+    {
+      "q": "Who owns the code if an agency builds my ERP?",
+      "a": "With FirstCompile, you do, from day one. The repository is created in your GitHub organisation before the first commit, with full IP assignment, and your data sits in a PostgreSQL database you can export at any time. If we stop working together, everything stays with you."
+    },
+    {
+      "q": "Is it safe to have AI write my business software?",
+      "a": "It depends on what the AI writes. At FirstCompile, AI handles boilerplate, tests, migrations, and repeated refactors; engineers design the data model, permissions, and anything touching money or personal data. Every generated change is read by an engineer and checked by a second model against its requirement."
+    }
+  ],
+  "related": ["workflow-automation", "data-business-intelligence", "application-development"],
+  "relatedProse": "If the bottleneck is a handful of manual handoffs rather than a whole system, Workflow automation is a smaller first step, and teams that mainly need reporting on data they already collect often start with Data & business intelligence. Broader product builds sit under Application development."
+}

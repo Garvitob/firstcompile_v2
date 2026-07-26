@@ -1,0 +1,90 @@
+---
+title: "Can a vibe-coded app go to production?"
+date: "2026-07-14"
+excerpt: "Often yes, and more often than the internet suggests. The checklist we run before answering."
+---
+
+Often yes.
+
+That surprises people. The internet has settled on a story where every app built with Cursor, Lovable, Bolt, or v0 is one screenshot away from disaster. Some are. Most are closer to fine than their founders fear, and the distance between demo and production is usually a short list of specific, unglamorous fixes. Not a rewrite.
+
+What follows is the checklist we run before answering the question for a real codebase. It is written for founders, not engineers. You do not need to fix any of it yourself. You need to know what the items mean so nobody can use them to scare you.
+
+## Two definitions first
+
+"Vibe-coded" means you described what you wanted to an AI tool and accepted most of what it produced. The tool wrote working software and you shipped something real.
+
+"Production" means real users, real personal data, and usually real money. The bar is not elegant code. The bar is this: a stranger with bad intentions can use the app all day and never reach anyone else's data, and when something breaks, you find out before your customers do.
+
+## The checklist
+
+Seven items. For each: what it is, the plain-English failure, and how hard the fix usually is.
+
+### Authorisation on every endpoint
+
+Authentication asks who you are. Authorisation asks whether you are allowed to do this specific thing. AI tools handle the first well, because every template ships a login page. They are careless with the second, because it depends on your business rules, which the tool never fully knew.
+
+The common failure: permissions enforced by hiding buttons. The delete button only shows for admins, but the endpoint behind it, the URL the button calls, accepts the request from any logged-in user. Anyone comfortable with browser developer tools can call it directly.
+
+The fix is a permission check on the server for every route. In PostgreSQL, row-level security adds a second net, so the database itself refuses to return rows a user should not see. In most codebases this is days of work, not weeks. It is also the most important item on this list.
+
+### Changing the ID in the URL
+
+Engineers call this IDOR, insecure direct object reference. The plain version: your invoice lives at /invoices/4021. Change the address to /invoices/4022 and someone else's invoice appears. This is the most common real vulnerability we find in generated apps, and you can test it yourself in ten minutes. Log in as one user and copy the URL of any record. Log in as a different user and paste it. If the record loads, you have the problem.
+
+Sequential numbers make guessing easy, and random IDs are not a fix on their own. The real fix is the same server-side check as the previous item, and the two are usually repaired together.
+
+### Secrets shipped to the browser
+
+An API key in server code is a credential. The same key in browser code is public information, because anyone can open the page source and read it. Generated apps mix the two up constantly, most often with OpenAI keys and database URLs, because the tool put variables wherever the demo worked.
+
+Check it yourself. Open your app, view the page source, and search for "key" and "sk-". If a live key has ever shipped to the browser, assume it is compromised and rotate it. Rotation takes an hour. The lasting fix is making sure every secret is read only on the server.
+
+### Unvalidated uploads
+
+If users can upload anything, a profile photo, a CSV, a PDF, three rules apply. Cap the file size, or one user can fill your storage. Restrict the type, and check the actual file contents rather than trusting the filename. Serve uploads from object storage such as S3, never from a folder your application can execute code from. The classic failure is an uploaded HTML file that runs script in other users' browsers. Generated apps usually have the upload working and none of the three rules. Small fix, quick to verify.
+
+### Payment handling
+
+Anything that touches money gets read line by line, by a person. The rules we check against:
+
+- The price comes from your database, never from the browser. A request claiming "the total is $1" must not be believed.
+- Amounts are stored as integers in the smallest unit, cents or paise. Never as floating-point numbers, which drift.
+- Webhooks from the payment processor are verified with signatures, so a forged "payment succeeded" message is rejected.
+- Handlers are idempotent, meaning a webhook delivered twice cannot create two orders or two refunds. Processors do redeliver.
+- Someone reconciles the app's records against the processor's dashboard, at least at first.
+
+Stripe and Razorpay do the hard parts if wired correctly. AI tools reliably wire the happy path and skip failed payments, refunds, and disputes. If you invoice Indian customers, also confirm GST appears correctly; generated billing code rarely knows local tax rules.
+
+### Backups and restore
+
+A backup you have never restored is a hope, not a backup. Three questions for whoever hosts your database: do automatic daily backups exist, how long are they kept, and has anyone restored one into a scratch environment and confirmed the data came back. Managed Postgres providers such as Supabase, Neon, or RDS usually have backups on by default, but retention windows and deletion protection are not defaults everywhere. This is a ten-minute check and the cheapest insurance on the list.
+
+### Error handling and retries
+
+A demo assumes everything works. Production assumes nothing does. Third-party APIs time out. Emails bounce. Webhooks arrive twice, late, or never.
+
+Two things to look for. First, background work such as sending email, syncing data, or calling AI models should run through a job system with retries and a dead-letter queue, which is a holding area where failed jobs wait to be inspected instead of vanishing silently. Second, an error tracker such as Sentry, so crashes reach a dashboard you watch rather than arriving as an angry customer email two weeks later. Neither is expensive. Both are usually missing from generated apps, because demos never fail.
+
+## When repair beats rebuild
+
+Repair wins more often than the internet says. Signs repair is the right call:
+
+- The data model is roughly correct. Tables map to real things in your business.
+- The app is one framework, one generation of patterns, and it runs on a laptop outside the AI tool that made it.
+- Users want the product. Complaints are about trust and reliability, not missing features.
+- The checklist failures cluster in the first four items. Each of those is measured in days.
+
+Rebuild when the foundations are wrong. Money stored as floats, with history already drifted. No way to run the app except through the tool that generated it. Three half-finished attempts at the same feature layered on top of each other, so there is no single version of the truth. Also rebuild if the product is pivoting; you would be repairing something about to be discarded.
+
+A rebuild is not an admission of failure. The vibe-coded app is the most precise spec ever written: a working answer to every question about what the product should do. Keep it running while the replacement is built. Migrate the data once. Cut over once.
+
+One trade-off to state plainly: repaired generated code carries a reading tax. Every future change means an engineer reading code no human designed. That cost is real. For most apps it is still smaller than starting over.
+
+## What to do this week
+
+Run the three self-serve tests. Change an ID in a URL while logged in as the wrong user. Search your page source for keys. Ask your host the backup questions.
+
+Then have someone qualified read the rest. Ask for findings in writing, ordered by risk, with an effort estimate per item. If the answer comes back as "throw it away" with no line items, get a second opinion.
+
+This checklist is the one we run at FirstCompile before quoting a repair. A mutual NDA is signed before you share the repository, same day, and you get one fixed price in writing within 48 hours of a scoping call. But the checklist works whoever runs it. And the honest answer, more often than you have been told, is yes.

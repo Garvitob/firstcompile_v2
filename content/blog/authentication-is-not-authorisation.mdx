@@ -1,0 +1,104 @@
+---
+title: "Your app has authentication. It probably does not have authorisation."
+date: "2026-07-07"
+excerpt: "Login works. That is a different problem from people only seeing their own data."
+---
+
+Login works. Users sign up, get a session, land on a dashboard. Passwords are hashed, maybe there is a magic link or Google OAuth. That is authentication, and modern tooling has made it nearly free.
+
+Authorisation is a separate problem. Authentication answers "who is this?" Authorisation answers "what is this person allowed to see and do?" An app can have flawless authentication and no authorisation at all. It is a common combination, especially in apps built fast.
+
+## Two different problems
+
+Definitions, stated plainly:
+
+- Authentication: proving identity. Login, sessions, tokens, OAuth. "You are user 4187."
+- Authorisation: access control. Which rows, which actions. "User 4187 may read invoices where `tenant_id = 9`, and nothing else."
+
+Authentication is a packaged problem. Auth.js, Clerk, Supabase Auth, Firebase. Install, configure, done in an afternoon.
+
+Authorisation cannot be packaged the same way because it depends on your data model. Who owns an invoice? Can an accountant in one organisation see draft invoices in another? Can a support agent act on behalf of a customer, and does that get logged? No library knows. You decide, then you enforce it on every query.
+
+## The invoices table
+
+Say your app has an `invoices` table: `id`, `tenant_id`, `amount`, `pdf_url`. There is a page at `/invoices/42`. The handler runs a query.
+
+The dangerous version, sitting safely behind a login:
+
+`SELECT * FROM invoices WHERE id = 42`
+
+The login gate is real. Only signed-in users reach this code. But the query does not know who signed in. A user from tenant A requests invoice 42, which belongs to tenant B, and gets it. The session proved identity. The query ignored it.
+
+The correct version:
+
+`SELECT * FROM invoices WHERE id = 42 AND tenant_id = :current_tenant`
+
+One extra condition. It has to appear on every read, every update, every delete, every export job, every webhook payload builder, every admin report. Miss it once and that path leaks. This is why authorisation bugs survive code review: each one is a single absent `AND` clause in a file nobody reopened.
+
+## Row-level security in Postgres
+
+If you run Postgres, you can push the tenant check into the database itself, so a forgotten `WHERE` clause fails safe instead of leaking.
+
+```sql
+ALTER TABLE invoices ENABLE ROW LEVEL SECURITY;
+ALTER TABLE invoices FORCE ROW LEVEL SECURITY;
+
+CREATE POLICY tenant_isolation ON invoices
+  USING (tenant_id = current_setting('app.tenant_id')::uuid);
+```
+
+Line by line:
+
+- `ENABLE ROW LEVEL SECURITY` turns the feature on for this table. From this point, a role with no matching policy sees nothing. Deny by default, which is the right default.
+- `FORCE ROW LEVEL SECURITY` applies the rules to the table's owner as well. Without this line, the owning role skips every policy, and many apps connect as the owner without realising it.
+- `CREATE POLICY tenant_isolation ON invoices` names a rule and attaches it to the table.
+- `USING (...)` is the filter Postgres now adds to every read. Rows that fail the check are not an error. They are invisible, as if they did not exist.
+- `current_setting('app.tenant_id')` reads a session variable. Your application sets it once per request, right after verifying the session, with `SET LOCAL app.tenant_id = '...'`. The `::uuid` cast means a missing or garbled value throws an error instead of quietly matching the wrong rows.
+
+Now the lazy query from the previous section, `SELECT * FROM invoices WHERE id = 42`, returns the row only if it belongs to the current tenant. The mistake still exists in the code. It just stopped mattering.
+
+### The honest trade-offs
+
+RLS is not free.
+
+- Connection poolers reuse sessions. Set the variable with `SET LOCAL` inside a transaction, or run the pooler in transaction mode, or the tenant id bleeds between requests. This is the classic RLS bug.
+- Debugging changes. A row that "disappears" in production is now a policy question, not only a query question.
+- Query plans can slow down because the policy predicate attaches to everything. An index on `tenant_id` usually covers it. Measure anyway.
+- Background jobs and admin tools need a deliberate bypass role, and that role deserves the same care as a root password.
+
+On a multi-tenant system the trade is usually worth making. A rule enforced in one place beats a convention repeated in two hundred queries.
+
+## Why generated code stops at login
+
+AI code generators produce authentication reliably and authorisation rarely. The reasons are structural.
+
+- Login tutorials saturate the training data. Every framework ships one. The pattern is everywhere, so the model reproduces it well.
+- Authentication is generic. Authorisation is specific to your schema. A prompt that says "build an invoicing app" carries no information about which role may void an invoice. The model cannot infer rules you never stated, so it ships the part it knows.
+- The demo works either way. One test account, clicking around, everything looks correct. Authorisation failures only show up with a second account, and nobody creates one.
+- Nothing fails. Missing authorisation compiles, passes type checks, and passes the happy-path tests the same model wrote.
+
+This is why we treat permissions as human work. On our projects, AI writes boilerplate, tests, and migrations, but an engineer designs the data model and every permission rule, and reads every generated change. If your app was built quickly with heavy AI assistance, assume authorisation is missing until you prove otherwise.
+
+## The ten-minute check
+
+You do not need an audit to find the obvious holes.
+
+1. Sign in and open any detail page. Look at the URL: `/invoices/42`, or an id in a query string. Change the number. Increment it. If you see someone else's record, stop reading and go fix it.
+2. Create two accounts, the second in an incognito window. Create data in account A. Paste account A's URLs into account B's session.
+3. Test the API, not just the UI. Open dev tools, copy a request as curl, swap the id, replay it. Interfaces often hide buttons while the endpoint behind them accepts anyone.
+4. Try writes, not just reads. Take a DELETE or PATCH request from account A and point it at account B's resource id. Write holes are worse than read holes.
+5. Check files and exports. PDF links, CSV downloads, storage bucket URLs. These often skip the middleware that guards HTML pages.
+
+One caution. Sequential ids make holes easy to find, and UUIDs make them hard to guess, but unguessable is not authorised. Ids leak in emails, invoices, and support screenshots. If the only thing protecting a record is that its id is long, it is not protected.
+
+## If a check fails
+
+Do not patch endpoint by endpoint. That is how you fix five holes and keep the sixth. Pick one enforcement point and route everything through it:
+
+- Database: Postgres RLS, as above. Strongest guarantee, most operational care.
+- Data layer: a single module that every query passes through, which requires a tenant id on every call and is the only code allowed to touch the database driver. Then make CI fail on raw queries anywhere else.
+- Middleware alone is not enough. It protects routes, not rows.
+
+Whichever you choose, turn the two-account test into an automated test, so the guarantee survives the next feature.
+
+If you would rather have a second pair of eyes on a system that touches money or personal data, write to hello@firstcompile.com. A mutual NDA is signed before you share anything, same day, as standard.

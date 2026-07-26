@@ -1,0 +1,91 @@
+{
+  "slug": "cloud-devops",
+  "name": "Cloud & DevOps",
+  "oneLiner": "Deployments, environments, and monitoring done properly. Releases stop being scary.",
+  "metaTitle": "Cloud & DevOps done properly | FirstCompile",
+  "metaDescription": "Cloud and DevOps for teams that ship: CI/CD pipelines, staging environments, monitoring, and alerts. One fixed price in writing, a live URL from week one.",
+  "kicker": "Service",
+  "h1": "Ship on a Friday without holding your breath.",
+  "intro": [
+    "Plenty of good products deploy in a way nobody would defend out loud. One engineer runs a script from their laptop. Staging is production with a different colour header, or it does not exist. Nobody knows an outage happened until a customer emails. None of this is unusual, and none of it needs a platform team to fix.",
+    "We set up the plumbing: CI that runs tests on every push, separate development, staging, and production environments with their own databases and secrets, deploys that happen from a merge instead of a terminal, and monitoring that alerts you before your users notice. The tools are mostly boring and mostly cheap. The real work is knowing which ones you actually need at your size, because half of what gets sold as DevOps is overhead for a small team.",
+    "Most of this lands in 2–4 weeks. You get one fixed price in writing within 48 hours of a scoping call, everything is built in your GitHub organisation from day one, and there is a real pipeline deploying to a real URL by the end of week one. Daily written updates while we work."
+  ],
+  "whoFor": [
+    "Startups whose app is live but whose releases depend on one person and a prayer. If deploys happen after midnight because that is the safest time to break things, this is the service for that.",
+    "Established businesses running internal tools or customer systems that were set up years ago and never revisited. Backups nobody has tested, credentials shared in a spreadsheet, a server someone is scared to restart. We have seen all of it and none of it shocks us.",
+    "Also teams that built something fast, with AI tools or a freelancer, and now need it to survive real traffic. The code may be fine. The infrastructure around it usually is not."
+  ],
+  "included": [
+    {
+      "title": "CI/CD pipelines",
+      "line": "Every push runs tests and builds; every merge deploys, with a preview URL for each pull request."
+    },
+    {
+      "title": "Separate environments",
+      "line": "Development, staging, and production with their own databases and secrets, so a test never touches customer data."
+    },
+    {
+      "title": "Monitoring and alerting",
+      "line": "Error tracking, uptime checks, and alerts routed to the right person, tuned to fire rarely enough to be believed."
+    },
+    {
+      "title": "Rollbacks that work",
+      "line": "A bad release comes back in minutes with one command, not a frantic hour of manual fixes."
+    },
+    {
+      "title": "Secrets and access control",
+      "line": "API keys out of the codebase and out of chat history, scoped per environment, with authorisation rules an engineer has actually read."
+    },
+    {
+      "title": "Backups with restore drills",
+      "line": "Automated database backups, and we restore one into a fresh environment to prove they actually work."
+    },
+    {
+      "title": "Runbooks and handover",
+      "line": "Short written guides so your team can deploy, roll back, and respond to an alert without calling us."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Audit and fixed quote",
+      "body": "A scoping call and a look at how you deploy today, with a mutual NDA signed the same day before you share anything. One fixed price in writing within 48 hours; the number does not change after kickoff.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "Pipelines and environments",
+      "body": "The work happens in your GitHub organisation from day one, with full IP assignment. By the end of week one there is a live URL deploying through the new pipeline, plus a written update every day.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Monitoring, backups, hardening",
+      "body": "Error tracking, alerts, tested backups, secrets cleanup. AI handles the repetitive configuration; an engineer designs anything touching credentials or data and reads every change before it lands.",
+      "range": "Weeks 2–3"
+    },
+    {
+      "title": "Handover and the 30-day window",
+      "body": "Runbooks and a walkthrough with your team, then 30 days where anything we built that breaks is fixed at no cost. After that, optional monthly care you can stop any time.",
+      "range": "Week 4 onwards"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does a DevOps setup like this cost?",
+      "a": "FirstCompile quotes one fixed price, in writing, within 48 hours of a scoping call, and the number does not change after kickoff. There is no hourly billing. US and international clients pay in USD; Indian clients pay in INR with GST."
+    },
+    {
+      "q": "Do we need to rewrite our app to get proper deployments?",
+      "a": "Almost never. Pipelines, environments, monitoring, and backups sit around the code you already have. If the app itself has structural problems, we say so in the audit, with the trade-offs spelled out, and you decide what to do about them."
+    },
+    {
+      "q": "How long does it take to set up CI/CD and monitoring?",
+      "a": "Most of this work is live in 2–4 weeks, with a working pipeline deploying to a real URL by the end of week one and daily written updates throughout. Larger environment rebuilds sit closer to the 3–8 weeks we quote for custom business systems."
+    },
+    {
+      "q": "What happens when something breaks after you leave?",
+      "a": "Every FirstCompile project includes a 30-day post-launch window: anything we built that breaks is fixed at no cost. After that there is optional monthly care you can stop any time. The runbooks mean your own team is never locked out of operating the system."
+    }
+  ],
+  "related": ["application-development", "vibe-code-to-production", "ai-app-security-audit"],
+  "relatedProse": "If the app itself needs work before it is worth deploying properly, Application development covers full builds, and Vibe-code to production turns AI-generated prototypes into systems that hold up. An AI app security audit is a sensible companion once real traffic arrives."
+}

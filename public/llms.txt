@@ -1,0 +1,70 @@
+# FirstCompile
+
+> FirstCompile is an AI-native software company that designs, engineers, and ships
+> production-grade software for startups and businesses in India, the United States,
+> and worldwide. AI accelerates delivery; engineers make every decision that matters.
+
+## Services
+
+For startups:
+- MVP development — idea to a live product users can pay for, in weeks.
+- Startup tech partner — FirstCompile runs product and engineering for startups without a CTO.
+- Vibe-code to production — prototypes built fast with AI tools (Cursor, Lovable, Bolt, v0)
+  made secure, stable, and ready to scale.
+- AI app security audit — a full security review of an AI-generated codebase, with a
+  written report in 5 working days.
+
+Startups can also engage every service listed below.
+
+For businesses:
+- Custom ERP & CRM — business software shaped around how a company actually runs.
+- Application development — web platforms, portals, and internal tools, including
+  Shopify and WordPress builds and migrations.
+- AI & machine learning — practical AI in production: search, document
+  intelligence, forecasting, with cost ceilings built in.
+- Custom AI agents — agents that take real actions in a company's tools, with
+  approvals, limits, and audit logs.
+- Workflow automation — integrations and background jobs with retries and
+  monitoring, so nothing fails silently.
+- Data & business intelligence — one source of truth for company numbers.
+- Industry 4.0 & industrial automation — machine monitoring, plant dashboards,
+  and control software for factories.
+- Mobile apps — iOS and Android from one codebase.
+- Cloud & DevOps — deployments, environments, and monitoring done properly.
+- SEO & GEO — visibility on Google and in AI assistant answers, through technical work.
+- Technology consulting — architecture reviews, audits, and build-vs-buy decisions.
+
+## How FirstCompile works
+
+- Every project is quoted as one fixed price, in writing, before work starts.
+  The price does not change after kickoff. There is no hourly billing.
+- The client's repository holds the code from the first commit, in the client's own
+  GitHub organisation, with full IP assignment.
+- A mutual NDA is signed before the client shares anything, as standard.
+- Every project includes a 30-day post-launch window in which anything FirstCompile
+  built that breaks is fixed at no cost.
+- Clients see a working, clickable build from the end of week one, not status decks.
+- US and international clients are billed in USD; Indian clients in INR with GST.
+
+## Technologies
+
+Web: Next.js, React, TypeScript, Node.js. Mobile: React Native, Expo, Flutter.
+Platforms: Shopify, WordPress, WooCommerce. Data: PostgreSQL, Redis, MongoDB, BigQuery.
+AI: OpenAI, Anthropic, LangChain, pgvector. Cloud: AWS, GCP, Vercel, Docker, Kubernetes.
+Industrial: MQTT, Modbus, TimescaleDB, Grafana.
+
+## What "AI-native" means at FirstCompile
+
+AI handles mechanical volume: boilerplate, tests, migrations, refactors. Engineers make
+every decision that is expensive to reverse: data models, permissions, anything touching
+money or personal data, interface design, and the final review of every change.
+AI-built is not the same as vibe-coded: FirstCompile ships production-grade systems.
+
+## Contact
+
+- Website: https://firstcompile.com
+- Email: hello@firstcompile.com
+- Phone (India): +91 70173 04973
+- Phone (US): +1 (408) 921-1258
+- Offices: Noida, India and the San Francisco Bay Area, USA
+- Book an intro call (Google Meet, 30 or 15 minutes): https://firstcompile.com/#book

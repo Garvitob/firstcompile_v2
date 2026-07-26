@@ -1,0 +1,91 @@
+{
+  "slug": "startup-tech-partner",
+  "name": "Startup tech partner",
+  "oneLiner": "No CTO yet. We run product and engineering until you hire one.",
+  "metaTitle": "A tech partner until you hire your CTO | FirstCompile",
+  "metaDescription": "A startup tech partner that runs product and engineering until you hire a CTO. One fixed price, code in your GitHub organisation, MVPs live in 2–4 weeks.",
+  "kicker": "For startups",
+  "h1": "Ship like you already have a CTO.",
+  "intro": [
+    "Hiring a CTO takes months. Agency quotes are hard to compare when you cannot read code. Freelancers ship, disappear, and leave you with a repository nobody can explain. Meanwhile the product is not getting built.",
+    "We fill that gap. After a scoping call and a mutual NDA, you get one fixed price in writing within 48 hours. We never bill hourly, and the number does not change after kickoff. The repository is created in your GitHub organisation on day one, with full IP assignment, so the work is yours from the first commit.",
+    "Then we run product and engineering the way an in-house team would. A live clickable URL by the end of week one, updated continuously. Daily written updates in plain English. MVPs typically go live in 2–4 weeks; larger business systems take 3–8. When you do hire a CTO, they inherit a codebase that already belongs to you."
+  ],
+  "whoFor": [
+    "You are a founder with a validated idea and no engineering team. You have three agency quotes you cannot evaluate and a CTO search that could run six months. You need software shipped now and a clean handover later.",
+    "Or you run an established business, a clinic, a distributor, a trading firm, that has outgrown spreadsheets and has nobody technical on staff. The same arrangement works: we make the technical decisions, you make the business ones, and everything we build sits in your GitHub organisation.",
+    "This is one of our four startup entry points, but the label is loose. Any company without a technical leader can engage it, and startups can engage every other service we offer."
+  ],
+  "included": [
+    {
+      "title": "Mutual NDA, same day",
+      "line": "Signed before you share anything, as standard."
+    },
+    {
+      "title": "One fixed price, in writing",
+      "line": "Within 48 hours of a scoping call, never hourly, and the number does not change after kickoff."
+    },
+    {
+      "title": "Repo in your GitHub organisation",
+      "line": "Created on day one, with full IP assignment, so there is nothing to transfer later."
+    },
+    {
+      "title": "A live URL from week one",
+      "line": "A clickable URL by the end of week one, updated continuously, plus a daily written update on what shipped and what is next."
+    },
+    {
+      "title": "A stack your CTO inherits",
+      "line": "Next.js, TypeScript, PostgreSQL, and React Native. Common tools, so future hires can read the code on day one."
+    },
+    {
+      "title": "Engineers read every change",
+      "line": "AI writes boilerplate, tests, and migrations. Engineers design data models and permissions, own anything touching money or personal data, and read every change. A second model checks generated code against its requirement."
+    },
+    {
+      "title": "Thirty days of free fixes",
+      "line": "Anything we built that breaks within 30 days of launch is fixed at no cost, then optional monthly care you can stop any time."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scope and price",
+      "body": "A scoping call, with a mutual NDA signed the same day before you share anything. You get one fixed price in writing within 48 hours.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "Kickoff",
+      "body": "The repository is created in your GitHub organisation on day one. By the end of the first week there is a live URL you can open on your phone.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Build and ship",
+      "body": "Daily written updates, and a URL that changes as the product does. MVPs typically go live in 2–4 weeks; larger business systems take 3–8.",
+      "range": "Weeks 2–8"
+    },
+    {
+      "title": "Launch and handover",
+      "body": "For 30 days after launch, anything we built that breaks is fixed at no cost. After that, optional monthly care you can stop any time, and a codebase your future CTO already owns.",
+      "range": "After launch"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need a technical co-founder to work with an agency like this?",
+      "a": "No. This engagement exists for companies without a technical leader. We make the engineering decisions, explain them in daily written updates in plain English, and keep all code in a GitHub organisation you own. When you eventually hire a CTO or technical co-founder, they take over a codebase that was yours from day one."
+    },
+    {
+      "q": "How do you charge, hourly or fixed?",
+      "a": "Fixed, always. After a scoping call you get one price in writing within 48 hours, and that number does not change after kickoff. US and international clients pay in USD; Indian clients pay in INR with GST."
+    },
+    {
+      "q": "What happens when I hire a CTO?",
+      "a": "They inherit a repository that has lived in your GitHub organisation since day one, with full IP assignment and a common stack: Next.js, TypeScript, PostgreSQL. Because the code was always yours, there is nothing to migrate. Optional monthly care can be stopped any time, so handover happens whenever your new CTO is ready."
+    },
+    {
+      "q": "Do you use AI to write the code?",
+      "a": "Yes, for boilerplate, tests, migrations, and repeated refactors. Engineers design the data models and permissions, handle anything touching money or personal data, and read every change before it ships. Generated code is also checked by a second model against its requirement."
+    }
+  ],
+  "related": ["mvp-development", "vibe-code-to-production", "technology-consulting"],
+  "relatedProse": "MVP development is the narrower engagement if you only need a first version shipped, and Technology consulting fits one-off decisions rather than ongoing delivery. If you already have an AI-built prototype, Vibe-code to production takes it the rest of the way."
+}

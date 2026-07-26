@@ -1,0 +1,95 @@
+{
+  "slug": "mvp-development",
+  "name": "MVP development",
+  "oneLiner": "Idea to a live product users can pay for, in weeks.",
+  "metaTitle": "MVP development in 2–4 weeks | FirstCompile",
+  "metaDescription": "MVP development at one fixed price, in writing within 48 hours. A live URL by end of week one, launch in 2–4 weeks, and a 30-day post-launch fix window.",
+  "kicker": "For startups",
+  "h1": "Ship a product users can pay for in 2–4 weeks.",
+  "intro": [
+    "Most MVPs die in the build. The idea is fine. The founder is fine. But three months in, the product still is not live, the scope has grown, and the market has moved. An MVP has one job: put something real in front of users and find out if they will pay. Speed is the point, and most builds lose it.",
+    "We build MVPs that go live in 2–4 weeks. Not a demo. A deployed product with real accounts, real data, and payments if your model needs them. You get a clickable URL by the end of week one and a short written update every day after that. Pricing is one fixed number, in writing, within 48 hours of a scoping call. Never hourly. The number does not change after kickoff.",
+    "The speed comes from how we use AI. AI writes the boilerplate, the tests, the migrations. Engineers design the data model and the permissions, write anything that touches money or personal data, and read every change before it merges. A second model checks generated code against its requirement. The repository sits in your GitHub organisation from day one, so if we vanished tomorrow you would lose nothing."
+  ],
+  "whoFor": [
+    "Founders with a validated idea and a deadline. You have talked to users, maybe raised a small round, and you need something live before the next investor meeting or the next hire. You do not have a technical co-founder yet, or the one you have is stretched thin.",
+    "Established companies testing a new line of business. A distributor standing up a B2B ordering portal. A services firm turning an internal tool into a product. MVP describes the scope of the build. The same 2–4 week process works whether this is your first product or your fifth.",
+    "Teams that already started. If you have a Figma file, a half-built prototype, or code from a previous agency, we scope from where you are."
+  ],
+  "included": [
+    {
+      "title": "One fixed price in writing",
+      "line": "You get the number within 48 hours of the scoping call, and it does not change after kickoff."
+    },
+    {
+      "title": "Your repo from day one",
+      "line": "The repository is created in your GitHub organisation on day one, with full IP assignment."
+    },
+    {
+      "title": "A live URL in week one",
+      "line": "A clickable deployment by the end of week one, updated continuously until launch."
+    },
+    {
+      "title": "Daily written updates",
+      "line": "A short written note every working day: what shipped, what is next, what is blocked."
+    },
+    {
+      "title": "Production stack, not prototype code",
+      "line": "Next.js, TypeScript, and PostgreSQL, with background jobs on Node and Inngest where the product needs them."
+    },
+    {
+      "title": "Engineer review of every change",
+      "line": "AI writes boilerplate, tests, and migrations; an engineer reads every change, and a second model checks generated code against its requirement."
+    },
+    {
+      "title": "30-day post-launch window",
+      "line": "Anything we built that breaks in the first 30 days after launch is fixed at no cost."
+    },
+    {
+      "title": "Mutual NDA before you share",
+      "line": "Signed the same day, as standard, before you send us anything."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scope and price",
+      "body": "We sign a mutual NDA before you share anything, then hold a scoping call. One fixed price arrives in writing within 48 hours.",
+      "range": "Days 1–2"
+    },
+    {
+      "title": "First working version",
+      "body": "The repository goes into your GitHub organisation on day one. By the end of the week you have a live clickable URL, and it updates continuously from there.",
+      "range": "Week 1"
+    },
+    {
+      "title": "Build to launch",
+      "body": "Core flows, sign-up, payments, and the unglamorous parts: error states, empty states, emails. Daily written updates the whole way.",
+      "range": "Weeks 2–4"
+    },
+    {
+      "title": "Launch and the 30 days after",
+      "body": "We launch, then stay on the hook: anything we built that breaks in the first 30 days is fixed at no cost. After that, optional monthly care you can stop any time.",
+      "range": "Week 4 onwards"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How long does it take to build an MVP?",
+      "a": "Typical MVPs at FirstCompile go live in 2–4 weeks. You get a live clickable URL by the end of week one and a written update every day until launch. Larger custom business systems run 3–8 weeks."
+    },
+    {
+      "q": "How much does an MVP cost to build?",
+      "a": "We do not publish prices because scope varies, but you get one fixed price, in writing, within 48 hours of a scoping call. We never bill hourly, and the number does not change after kickoff. Billing is in USD for US and international clients, and in INR with GST for Indian clients."
+    },
+    {
+      "q": "Who owns the code when the MVP is done?",
+      "a": "You do, from day one. The repository is created in your GitHub organisation before work starts, and every contract includes full IP assignment. There is no handover at the end because you held the code the whole time."
+    },
+    {
+      "q": "Is AI-generated code safe to build a startup on?",
+      "a": "It depends on who reviews it. At FirstCompile, AI writes boilerplate, tests, and migrations; engineers design the data model and permissions, write anything touching money or personal data, and read every change. Generated code is also checked by a second model against its requirement."
+    }
+  ],
+  "related": ["startup-tech-partner", "vibe-code-to-production", "mobile-apps"],
+  "relatedProse": "When the build continues past launch, Startup tech partner is the ongoing version of this work. If you are starting from an AI-generated prototype rather than an idea, Vibe-code to production picks up from there, and Mobile apps covers the same process for iOS and Android."
+}
