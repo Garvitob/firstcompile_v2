@@ -173,3 +173,5 @@ node scripts/check-copy.mjs   # voice/structure gate over generated copy
       section and sitemap update themselves.
 - [ ] **Honour the commitments** the site now promises: fixed quotes in 48
       hours, NDA same day, repo from commit one, 30-day fix window.
+#   f i r s t c o m p i l e _ v 2  
+ 
