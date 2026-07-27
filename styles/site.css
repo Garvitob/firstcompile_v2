@@ -66,10 +66,17 @@
    The contract allocates 468px to the whole booking panel (75 header +
    331 body + 61 footer), so the embed body is pinned and Cal scrolls
    inside its own iframe, exactly as the contract's slot list did. */
-.cal-embed{height:496px;overflow:hidden;position:relative}
-.cal-embed>*{height:100%!important}
-.cal-embed iframe{height:100%!important;width:100%!important;border:0}
-@media (max-width:760px){.cal-embed{height:560px}}
+/* Named fc-cal, not cal-embed: Cal puts `cal-embed` on its own iframe, so the
+   obvious name collides and the rules land on both elements.
+   The background matters. Cal renders its booker with a transparent html
+   background, so any area its app does not paint falls through to the
+   browser default, which is white. Painting the surface colour underneath
+   means dark mode stays dark even mid-load or when Cal's content does not
+   fill the frame. */
+.fc-cal{height:496px;overflow:hidden;position:relative;background:var(--srf)}
+.fc-cal>*{height:100%!important}
+.fc-cal iframe{height:100%!important;width:100%!important;border:0;background:transparent}
+@media (max-width:760px){.fc-cal{height:560px}}
 
 /* Cal's booker only lays the month grid and the slot list side by side once
    its own viewport clears 768px. The contract's .92/1.08 split leaves the

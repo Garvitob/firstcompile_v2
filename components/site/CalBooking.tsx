@@ -76,7 +76,7 @@ function LiveCal() {
           </button>
         </div>
       </div>
-      <div className="cal-embed">
+      <div className="fc-cal">
         {mounted && (
           <Cal
             key={`${ns}-${theme}`}
