@@ -19,7 +19,7 @@
 [data-theme="dark"]{
   --bg:#060607; --bg2:#0b0b0c; --srf:#101011; --srf2:#151516;
   --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.16);
-  --tx:#f2f2f4; --tx2:#9b9ba3; --tx3:#616168;
+  --tx:#f2f2f4; --tx2:#a5a5ae; --tx3:#7f7f88;
   --ac:#6a95ff; --ac-soft:rgba(106,149,255,.13); --ac-line:rgba(106,149,255,.32);
   --ok:#3ddc97; --ok-soft:rgba(61,220,151,.13);
   --warn:#f0a03c;
