@@ -90,6 +90,15 @@
   }
 }
 
+/* ---------- product screenshots ----------
+   Two files per product, one per theme, with CSS picking. The dark one is the
+   default so a missing or not-yet-applied data-theme still paints something
+   that belongs on the dark page rather than flashing a white slab. */
+.shot-img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px}
+.shot-light{display:none}
+[data-theme="light"] .shot-light{display:block}
+[data-theme="light"] .shot-dark{display:none}
+
 /* ---------- live product links ----------
    The case card already ends in a footer row: a hairline, then the tech stack.
    Where the product runs is the same class of fact about the build, so it
