@@ -7,10 +7,10 @@ export default function Hero() {
         <div className="hero-copy">
           <h1 className="h1 rv">Enterprise-grade software, at startup speed.</h1>
           <p className="lede rv d1">
-            FirstCompile is an AI-native software company. We build MVPs, custom
-            business systems, mobile apps, and automation that hold up in
-            production. AI gives us the speed. Engineers make every decision that
-            matters.
+            FirstCompile is an AI-native software company. We build MVPs, websites
+            and web apps, custom business systems, mobile apps, and automation that
+            hold up in production. AI gives us the speed. Engineers make every
+            decision that matters.
           </p>
           <div className="hero-ctas rv d2">
             <a className="btn btn-pri btn-lg" href="#book">
