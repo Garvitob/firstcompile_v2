@@ -20,7 +20,7 @@ export const homeSchemas: object[] = [
    prices, job postings, or reviews.
    ---------------------------------------------------------------- */
 
-import { SITE_URL } from "./site";
+import { SITE_URL, PRODUCT_URLS } from "./site";
 
 const ORG = {
   "@type": "Organization",
@@ -97,6 +97,7 @@ export function workSchema(): object {
         "@type": "SoftwareApplication",
         name: "ShipFlow",
         applicationCategory: "BusinessApplication",
+        url: PRODUCT_URLS.shipflow,
         description:
           "Multi-tenant delivery automation: a customer ticket through requirements, task breakdown, and a developer board, with dual-model pull request review.",
         author: ORG,
@@ -105,6 +106,7 @@ export function workSchema(): object {
         "@type": "SoftwareApplication",
         name: "NEXUS",
         applicationCategory: "BusinessApplication",
+        url: PRODUCT_URLS.nexus,
         description:
           "An AI workspace across mail, calendar, repositories, issues, and documents, with an assistant that performs real operations in those systems.",
         author: ORG,
@@ -125,6 +127,7 @@ export function productsSchema(): object {
         "@type": "SoftwareApplication",
         name: "ShipFlow",
         applicationCategory: "DeveloperApplication",
+        url: PRODUCT_URLS.shipflow,
         description:
           "Delivery automation for small software teams. Ticket to merged pull request, with review that reads the requirement. Private beta.",
         author: ORG,

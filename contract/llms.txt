@@ -34,6 +34,19 @@ For businesses:
 - SEO & GEO — visibility on Google and in AI assistant answers, through technical work.
 - Technology consulting — architecture reviews, audits, and build-vs-buy decisions.
 
+## Products FirstCompile builds and runs itself
+
+- ShipFlow — https://shipflow.garvitoberoi.com — multi-tenant delivery automation: a
+  customer ticket through requirements, task breakdown, and a developer board, with every
+  pull request reviewed by two models from different vendors before a human opens it.
+  In private beta.
+- NEXUS — https://nexus.garvitoberoi.com — one workspace across mail, calendar,
+  repositories, issues, and documents, with an assistant that performs real operations in
+  those systems instead of describing them.
+
+Both are built and owned by FirstCompile, not client work. Engineering write-ups for each:
+https://firstcompile.com/work
+
 ## How FirstCompile works
 
 - Every project is quoted as one fixed price, in writing, before work starts.

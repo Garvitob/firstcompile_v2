@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/site/JsonLd";
+import LiveLink from "@/components/site/LiveLink";
 import { productsSchema, breadcrumb } from "@/data/schema";
 
 export const metadata: Metadata = {
@@ -46,6 +47,9 @@ export default function ProductsPage() {
                 <li>Works with the GitHub you already use</li>
                 <li>Findings trace back to the acceptance criterion they violate</li>
               </ul>
+              <div className="prod-foot">
+                <LiveLink product="shipflow" />
+              </div>
             </article>
             <article className="prod rv d1">
               <div className="prod-top">

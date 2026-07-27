@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Shot from "@/components/site/Shot";
+import LiveLink from "@/components/site/LiveLink";
 import JsonLd from "@/components/site/JsonLd";
 import { workSchema, breadcrumb } from "@/data/schema";
 
@@ -88,8 +89,11 @@ export default function WorkPage() {
                     with a human making the final call
                   </li>
                 </ul>
-                <div className="case-stack">
-                  Turborepo · Next.js · TypeScript · Prisma · PostgreSQL · Inngest
+                <div className="case-stack case-foot">
+                  <span>
+                    Turborepo · Next.js · TypeScript · Prisma · PostgreSQL · Inngest
+                  </span>
+                  <LiveLink product="shipflow" />
                 </div>
               </div>
               <div className="case-side">
@@ -149,8 +153,11 @@ export default function WorkPage() {
                     stops when it hits one
                   </li>
                 </ul>
-                <div className="case-stack">
-                  Next.js · TypeScript · Clerk · Supabase · pgvector · Prisma
+                <div className="case-stack case-foot">
+                  <span>
+                    Next.js · TypeScript · Clerk · Supabase · pgvector · Prisma
+                  </span>
+                  <LiveLink product="nexus" />
                 </div>
               </div>
               <div className="case-side">

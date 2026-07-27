@@ -1,3 +1,5 @@
+import LiveLink from "./LiveLink";
+
 export default function Products() {
   return (
     <section className="sec" id="products">
@@ -30,6 +32,9 @@ export default function Products() {
               <li>Works with the GitHub you already use</li>
               <li>Findings trace back to the acceptance criterion they violate</li>
             </ul>
+            <div className="prod-foot">
+              <LiveLink product="shipflow" />
+            </div>
           </article>
           <article className="prod rv d1">
             <div className="prod-top">

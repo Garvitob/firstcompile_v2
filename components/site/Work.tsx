@@ -1,4 +1,5 @@
 import Shot from "./Shot";
+import LiveLink from "./LiveLink";
 
 export default function Work() {
   return (
@@ -37,8 +38,11 @@ export default function Work() {
                     acceptance criteria
                   </li>
                 </ul>
-                <div className="case-stack">
-                  Turborepo · Next.js · TypeScript · Prisma · PostgreSQL · Inngest
+                <div className="case-stack case-foot">
+                  <span>
+                    Turborepo · Next.js · TypeScript · Prisma · PostgreSQL · Inngest
+                  </span>
+                  <LiveLink product="shipflow" />
                 </div>
               </div>
               <div className="case-side">
@@ -63,8 +67,11 @@ export default function Work() {
                   <li>Vector search over user-scoped data with row-level access control</li>
                   <li>Token and cost ceilings per workspace</li>
                 </ul>
-                <div className="case-stack">
-                  Next.js · TypeScript · Clerk · Supabase · pgvector · Prisma
+                <div className="case-stack case-foot">
+                  <span>
+                    Next.js · TypeScript · Clerk · Supabase · pgvector · Prisma
+                  </span>
+                  <LiveLink product="nexus" />
                 </div>
               </div>
               <div className="case-side">
