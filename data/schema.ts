@@ -168,7 +168,7 @@ export function contactSchema(): object {
     mainEntity: {
       ...ORG,
       email: "hello@firstcompile.com",
-      telephone: ["+91-7017304973", "+1-408-921-1258"],
+      telephone: ["+91-7017304973"],
       contactPoint: [
         {
           "@type": "ContactPoint",

@@ -78,6 +78,5 @@ AI-built is not the same as vibe-coded: FirstCompile ships production-grade syst
 - Website: https://firstcompile.com
 - Email: hello@firstcompile.com
 - Phone (India): +91 70173 04973
-- Phone (US): +1 (408) 921-1258
 - Offices: Noida, India and the San Francisco Bay Area, USA
 - Book an intro call (Google Meet, 30 or 15 minutes): https://firstcompile.com/#book

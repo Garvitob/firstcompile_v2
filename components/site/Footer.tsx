@@ -74,7 +74,6 @@ export default function Footer() {
                 </svg>
                 <div>
                   <b>San Francisco Bay Area, USA</b>
-                  <a href="tel:+14089211258">+1 (408) 921-1258</a>
                 </div>
               </div>
             </div>
