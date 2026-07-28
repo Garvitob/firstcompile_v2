@@ -57,7 +57,7 @@ export function aboutSchema(description: string): object {
       ...ORG,
       description,
       email: "hello@firstcompile.com",
-      areaServed: ["India", "United States", "Worldwide"],
+      areaServed: ["India", "United States", "United Arab Emirates", "Worldwide"],
       location: [
         {
           "@type": "Place",
@@ -77,6 +77,15 @@ export function aboutSchema(description: string): object {
             addressLocality: "San Francisco",
             addressRegion: "CA",
             addressCountry: "US",
+          },
+        },
+        {
+          "@type": "Place",
+          name: "FirstCompile — Dubai",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Dubai",
+            addressCountry: "AE",
           },
         },
       ],
@@ -168,13 +177,12 @@ export function contactSchema(): object {
     mainEntity: {
       ...ORG,
       email: "hello@firstcompile.com",
-      telephone: ["+91-7017304973"],
       contactPoint: [
         {
           "@type": "ContactPoint",
           contactType: "sales",
           email: "hello@firstcompile.com",
-          areaServed: ["IN", "US"],
+          areaServed: ["IN", "US", "AE"],
           availableLanguage: "English",
         },
       ],

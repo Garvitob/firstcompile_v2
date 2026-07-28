@@ -4,7 +4,7 @@ import JsonLd from "@/components/site/JsonLd";
 import { aboutSchema, breadcrumb } from "@/data/schema";
 
 const ABOUT_DESCRIPTION =
-  "FirstCompile is an AI-native software company with offices in Noida, India and the San Francisco Bay Area. AI handles volume; engineers make every decision that matters.";
+  "FirstCompile is an AI-native software company with offices in Noida, Dubai, and the San Francisco Bay Area. AI handles volume; engineers make every decision that matters.";
 
 export const metadata: Metadata = {
   title: "About",
@@ -149,12 +149,12 @@ export default function AboutPage() {
       <section className="sec">
         <div className="wrap">
           <div className="sec-head">
-            <span className="kick rv">Two offices, one working day</span>
+            <span className="kick rv">Three offices, one working day</span>
             <h2 className="h2 rv d1" style={{ marginTop: 14 }}>
-              Noida and the Bay Area.
+              Noida, Dubai, and the Bay Area.
             </h2>
             <p className="lede rv d2">
-              Working hours overlap both time zones, so daily updates land
+              Working hours overlap all three time zones, so daily updates land
               during your day, wherever your day is. The cost falls on us, not
               on you: some of our internal meetings happen at strange hours. We
               accept that. Reach us at{" "}

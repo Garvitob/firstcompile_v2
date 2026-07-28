@@ -14,6 +14,10 @@
       "@type": "Country",
       "name": "United States"
     },
+    {
+      "@type": "Country",
+      "name": "United Arab Emirates"
+    },
     "Worldwide"
   ],
   "audience": [
@@ -39,9 +43,6 @@
     "PostgreSQL",
     "React Native"
   ],
-  "telephone": [
-    "+91-7017304973"
-  ],
   "location": [
     {
       "@type": "Place",
@@ -51,8 +52,7 @@
         "addressLocality": "Noida",
         "addressRegion": "Uttar Pradesh",
         "addressCountry": "IN"
-      },
-      "telephone": "+91 70173 04973"
+      }
     },
     {
       "@type": "Place",
@@ -62,6 +62,15 @@
         "addressLocality": "San Francisco",
         "addressRegion": "CA",
         "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "FirstCompile — Dubai",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
       }
     }
   ]

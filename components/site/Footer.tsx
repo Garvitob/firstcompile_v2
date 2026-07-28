@@ -41,7 +41,6 @@ export default function Footer() {
                 </svg>
                 <div>
                   <b>Noida, India</b>
-                  <a href="tel:+917017304973">+91 70173 04973</a>
                 </div>
               </div>
               <div className="office">
@@ -74,6 +73,24 @@ export default function Footer() {
                 </svg>
                 <div>
                   <b>San Francisco Bay Area, USA</b>
+                </div>
+              </div>
+              <div className="office">
+                <svg viewBox="0 0 20 14" aria-hidden="true">
+                  <defs>
+                    <clipPath id="fae">
+                      <rect width="20" height="14" rx="3" />
+                    </clipPath>
+                  </defs>
+                  <g clipPath="url(#fae)">
+                    <rect width="20" height="14" fill="#fff" />
+                    <rect x="5" width="15" height="4.67" fill="#00732F" />
+                    <rect x="5" y="9.33" width="15" height="4.67" fill="#000" />
+                    <rect width="5" height="14" fill="#EF3340" />
+                  </g>
+                </svg>
+                <div>
+                  <b>Dubai, UAE</b>
                 </div>
               </div>
             </div>
